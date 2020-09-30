@@ -1,8 +1,5 @@
 # Freespace
 
-This one holds your client application code, which you will commit/push shortly.
-
-
 ## How to install/run
 
 1. Clone the repository onto your machine.
