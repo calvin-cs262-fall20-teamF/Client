@@ -1,63 +1,108 @@
-import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
-// import * as SplashScreen from 'expo-splash-screen';
-// import * as eva from '@eva-design/eva';
-// import { Divider, List, ListItem } from '@ui-kitten/components';
+/***************************************************************
+ * App.js
+ *
+ * Organization: Freespace
+ * Last modified: September 29, 2020
+ *
+ * App.js contains all of the code necessary to run Freespace.
+ ***************************************************************/
 
-const data = new Array(2).fill({
-  title: 'Hoogenboom',
+// import functions and libraries
+import React, { useState } from 'react';
+import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import
+MaterialCommunityIcons
+  from 'react-native-vector-icons/MaterialCommunityIcons';
+
+// import custom functions and styles
+import Navigator from './routes/homeStack'
+import Map from './screens/map'
+import UserReport from './screens/userReport'
+
+import { globalStyles } from './styles/global';
+
+/*******************************************************
+ * getFonts
+ *
+ * Loads fonts asynchronously into a specified name
+ * for later use
+ *******************************************************/
+const getFonts = () => Font.loadAsync({
+  'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
+  'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf')
 });
+
+//tab navigation
+const Tab = createBottomTabNavigator();
 
 export default function App() {
-  const [locations, addLocation] = useState([
-    { name: 'KE Basketball Court', capacity: '100', key: '1' },
-    { name: 'KE Volleyball Court', capacity: '200', key: '2' },
-    { name: 'Commons Dining Hall', capacity: '300', key: '3' },
-    { name: 'Knollcrest Dining Hall', capacity: '400', key: '4' },
-    { name: 'Johnny\'s', capacity: '500', key: '5' },
-    { name: 'Main Dance Studio', capacity: '600', key: '6' },
-    { name: 'Dance Loft', capacity: '700', key: '7' },
-  ]);
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>FreeSpace</Text>
-      <StatusBar style="auto" />
-      <FlatList
-        contentContainerStyle={styles.locationList}
-        data={locations}
-        renderItem={({ item }) => (
-            <Text style={styles.locationText}>{item.name} {item.capacity}</Text>
-        )}
-      />
-      </View>
-  );
-}
+  // If fonts have been loaded, display the navigation container
+  // (created in routes/homeStack.js)
+  if (fontsLoaded) {
+    return (
+      <NavigationContainer>
+        <Tab.Navigator
+          initialRouteName="Feed"
+          tabBarOptions={{
+            activeTintColor: '#800000',
+          }}>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#800000',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    color: 'white',
-    marginTop: 20,
-    fontSize: 20
-  },
-  locationList: {
-    marginTop: 20,
-    padding: 10,
-    backgroundColor: '#f0fff0'
-  },
-  locationText: {
-    marginTop: 10,
-    padding: 10,
-    width: 290,
-    backgroundColor: '#ffd700',
-    fontSize: 20,
-    textAlign: 'left'
+          <Tab.Screen
+            name="Campus Map"
+            component={Map}
+            options={{
+              tabBarLabel: 'Campus Map',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons
+                  name="map"
+                  color={color}
+                  size={size}
+                />
+              ),
+            }} />
+          <Tab.Screen
+            name="HomeStack"
+            component={Navigator}
+            options={{
+              tabBarLabel: 'Home',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons
+                  name="home"
+                  color={color}
+                  size={size}
+                />
+              ),
+            }} />
+          <Tab.Screen
+            name="UserReport"
+            component={UserReport}
+            options={{
+              tabBarLabel: 'User Report',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons
+                  name="book"
+                  color={color}
+                  size={size}
+                />
+              ),
+            }} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    );
   }
-});
+  // If fonts have not been loaded, call getFonts and
+  // set fontsLoaded to true
+  else {
+    return (
+      <AppLoading
+        startAsync={getFonts}
+        onFinish={() => setFontsLoaded(true)}
+      />
+    )
+  };
+}
