@@ -19,7 +19,7 @@ MaterialCommunityIcons
 
 // import custom functions and styles
 import Navigator from './routes/homeStack'
-import Map from './screens/map'
+import MapNav from './routes/mapStack'
 import UserReport from './screens/userReport'
 
 import { globalStyles } from './styles/global';
@@ -47,14 +47,14 @@ export default function App() {
     return (
       <NavigationContainer>
         <Tab.Navigator
-          initialRouteName="Feed"
+          initialRouteName="Home"
           tabBarOptions={{
             activeTintColor: '#800000',
           }}>
 
           <Tab.Screen
             name="Campus Map"
-            component={Map}
+            component={MapNav}
             options={{
               tabBarLabel: 'Campus Map',
               tabBarIcon: ({ color, size }) => (
@@ -104,5 +104,7 @@ export default function App() {
         onFinish={() => setFontsLoaded(true)}
       />
     )
-  };
+  }
+
+
 }
