@@ -56,23 +56,5 @@ export const globalStyles = StyleSheet.create({
   },
   detailsText: {
     fontFamily: 'nunito-regular'
-  },
-  reportButton: {
-    width: 50,
-    height: 50,
-    padding: 20,
-    marginVertical: 10,
-    marginHorizontal: 10,
-    position: 'relative',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#71B1C8'  // renew blue
-  },
-  // Report screen styles
-  reportScreenContainer: {
-    flex: 1,
-    padding: 10,
-    alignItems: 'center',
-    backgroundColor: '#fff',
   }
 });
