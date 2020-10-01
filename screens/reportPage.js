@@ -26,14 +26,13 @@ export default function ReportPage({ route, navigation }) {
     return (
     <View style={globalStyles.locationScreenContainer}>
         <Text style={globalStyles.locationText}>{ route.params.name } </Text>
-
-        <div>
-            <FlatList style={globalStyles.locationList} data={busyness} renderItem={({ item }) => (
-            <TouchableOpacity style={globalStyles.listButton}>
-                <Text style={globalStyles.locationTitle}>{ item.name }</Text>
-                </TouchableOpacity>
-                )} />
-        </div>
+        
+        <FlatList style={globalStyles.locationList} data={busyness} renderItem={({ item }) => (
+        <TouchableOpacity style={globalStyles.listButton}>
+            <Text style={globalStyles.locationTitle}>{ item.name }</Text>
+            </TouchableOpacity>
+            )} />
+        
     </View>
 
     )}
