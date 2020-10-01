@@ -15,6 +15,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 // import custom functions and styles
 import Home from '../screens/home';
 import LocationDetails from '../screens/locationDetails';
+import ReportPage from '../screens/reportPage';
 import { globalStyles } from '../styles/global';
 
 const Stack = createStackNavigator();
@@ -30,6 +31,11 @@ export default function HomeStack() {
                 name="LocationDetails"
                 component={LocationDetails}
                 options={{title: 'Location Details'}}
+            />  
+            <Stack.Screen
+                name="reportPage"
+                component={ReportPage}
+                options={{title: 'Report Page'}}
             />
         </Stack.Navigator>
     );
