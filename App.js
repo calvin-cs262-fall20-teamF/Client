@@ -13,8 +13,16 @@ import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 import { NavigationContainer } from '@react-navigation/native';
 
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import
+MaterialCommunityIcons
+  from 'react-native-vector-icons/MaterialCommunityIcons';
+
 // import custom functions and styles
 import Navigator from './routes/homeStack'
+import MapNav from './routes/mapStack'
+import UserReport from './routes/reportStack'
+
 import { globalStyles } from './styles/global';
 
 /*******************************************************
@@ -28,15 +36,66 @@ const getFonts = () => Font.loadAsync({
     'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf')
 });
 
+//tab navigation
+const Tab = createBottomTabNavigator();
+
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   // If fonts have been loaded, display the navigation container
   // (created in routes/homeStack.js)
-  if(fontsLoaded){
+
+  if (fontsLoaded) {
     return (
       <NavigationContainer>
-          <Navigator />
+        {/* bottom navigation bar */}
+        <Tab.Navigator
+          //default route is Home Screen
+          initialRouteName="HomeStack"
+          tabBarOptions={{
+            activeTintColor: '#800000',
+          }}>
+
+          <Tab.Screen
+            name="Campus Map"
+            component={MapNav}
+            options={{
+              tabBarLabel: 'Campus Map',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons
+                  name="map"
+                  color={color}
+                  size={size}
+                />
+              ),
+            }} />
+          <Tab.Screen
+            name="HomeStack"
+            component={Navigator}
+            options={{
+              tabBarLabel: 'Home',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons
+                  name="home"
+                  color={color}
+                  size={size}
+                />
+              ),
+            }} />
+          <Tab.Screen
+            name="UserReport"
+            component={UserReport}
+            options={{
+              tabBarLabel: 'User Report',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons
+                  name="book"
+                  color={color}
+                  size={size}
+                />
+              ),
+            }} />
+        </Tab.Navigator>
       </NavigationContainer>
     );
   }
@@ -51,3 +110,4 @@ export default function App() {
     )
   }
 };
+
