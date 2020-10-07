@@ -18,7 +18,7 @@ export default function userReport({ navigation }) {
   return (
 
     <View>
-      <Text style={globalStyles.locationTitle}>user report</Text>
+      <Text style={globalStyles.locationTitle}>user report{'\n'}</Text>
       <Button
         onPress={() => alert('Report is submitted!')}
         title="SUBMIT"
