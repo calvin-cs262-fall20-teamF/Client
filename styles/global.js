@@ -39,6 +39,7 @@ export const globalStyles = StyleSheet.create({
     marginHorizontal: 20,
     padding: 10,
     backgroundColor: '#fff'
+
   },
   // Location screen styles
   locationScreenContainer: {
@@ -56,6 +57,44 @@ export const globalStyles = StyleSheet.create({
     fontSize: 20
   },
   detailsText: {
-    fontFamily: 'nunito-regular'
+    fontFamily: 'nunito-bold',
+    padding: 10,
+    fontSize: 25,
+  },
+  numberText: {
+    fontFamily: 'nunito-bold',
+    fontSize: 25,
+    marginBottom: 20,
+    color: '#999900',
+  },
+  notBusy: {
+    fontFamily: 'nunito-bold',
+    padding: 10,
+    color: '#ffeb3b',
+    fontSize: 25,
+  },
+  slightlyBusy: {
+    fontFamily: 'nunito-bold',
+    padding: 10,
+    color: '#a5c932',
+    fontSize: 25,
+  },
+  busy: {
+    fontFamily: 'nunito-bold',
+    padding: 10,
+    color: '#ffff00',
+    fontSize: 25,
+  },
+  veryBusy: {
+    fontFamily: 'nunito-bold',
+    padding: 10,
+    color: '#ff9900',
+    fontSize: 25,
+  },
+  extremelyBusy: {
+    fontFamily: 'nunito-bold',
+    padding: 10,
+    color: '#ff3300',
+    fontSize: 25,
   }
 });

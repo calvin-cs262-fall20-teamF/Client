@@ -11,6 +11,7 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
+
 // import custom functions and styles
 import { globalStyles } from '../styles/global';
 
@@ -23,3 +24,4 @@ export default function LocationDetails({ route, navigation }) {
         </View>
     );
 }
+  

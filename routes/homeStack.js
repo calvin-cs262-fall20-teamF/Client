@@ -12,6 +12,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
+
 // import custom functions and styles
 import Home from '../screens/home';
 import LocationDetails from '../screens/locationDetails';
@@ -39,6 +40,7 @@ export default function HomeStack() {
                         <Header navigation={navigation} title='Location Details' />
                     ),
                 })}
+
             />
         </Stack.Navigator>
     );
