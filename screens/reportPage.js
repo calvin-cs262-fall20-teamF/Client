@@ -20,7 +20,7 @@ export default function ReportPage({ route, navigation }) {
         {name: 'Slightly busy', weight: '2', key: '2'},
         {name: 'Busy', weight: '3', key: '3'},
         {name: 'Very busy', weight: '4', key: '4'},
-        {name: 'Extremly busy', weight: '5', key: '5'},
+        {name: 'Extremely busy', weight: '5', key: '5'},
     ]);
 
     return (
