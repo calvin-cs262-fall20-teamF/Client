@@ -17,16 +17,16 @@ import { globalStyles } from '../styles/global';
 export default function LocationDetails({ route, navigation }) {
     //item takes the name to be passed along to the report page
     const item = { name: route.params.name};
-    const business = { currentState: route.params.currentState };
+    const business = { currentState: route.params.currentState }
 
-    // function getBusinessStyle(currentState) {
-    //     if (currentState == 'Not busy') {
-    //         return globalStyles.notBusy;
-    //     } else if (currentState == 'Slightly busy') {
-    //         return globalStyles.slightlyBusy;
-    //     } else {
-    //         return globalStyles.extremelyBusy;
-    //     }
+    function getBusinessStyle(currentState) {
+        if (currentState == 'Not busy') {
+            return globalStyles.notBusy;
+        } else if (currentState == 'Slightly busy') {
+            return globalStyles.slightlyBusy;
+        } else {
+            return globalStyles.extremelyBusy;
+        }
         // return <span> {
         //     currentState == 'Not busy' ? globalStyles.notBusy
         //     : currentState == 'Slightly busy' ? globalStyles.slightlyBusy
@@ -34,7 +34,7 @@ export default function LocationDetails({ route, navigation }) {
         //     : currentState == 'Very busy' ? globalStyles.veryBusy
         //     : globalStyles.extremelyBusy }
         //     </span>;
-    // };
+    };
 
     return (
         <View style={globalStyles.locationScreenContainer}>

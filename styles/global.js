@@ -22,7 +22,8 @@ export const globalStyles = StyleSheet.create({
     marginHorizontal: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#71B1C8'  // renew blue
+    backgroundColor: '#71B1C8',  // renew blue
+    borderRadius: 6,
   },
   locationTitle: {
     flex: 1,
