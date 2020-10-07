@@ -20,7 +20,7 @@ MaterialCommunityIcons
 // import custom functions and styles
 import Navigator from './routes/homeStack'
 import MapNav from './routes/mapStack'
-import UserReport from './screens/userReport'
+import UserReport from './routes/reportStack'
 
 import { globalStyles } from './styles/global';
 
@@ -46,8 +46,10 @@ export default function App() {
   if (fontsLoaded) {
     return (
       <NavigationContainer>
+        {/* bottom navigation bar */}
         <Tab.Navigator
-          initialRouteName="Home"
+          //default route is Home Screen
+          initialRouteName="HomeStack"
           tabBarOptions={{
             activeTintColor: '#800000',
           }}>
@@ -105,6 +107,4 @@ export default function App() {
       />
     )
   }
-
-
 }

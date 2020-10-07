@@ -1,8 +1,8 @@
 /***************************************************************
  * global.js
- * 
+ *
  * Last modified: September 29, 2020
- * 
+ *
  * global.js creates the StyleSheet that contains details for
  * all style props.
  ***************************************************************/
@@ -22,7 +22,8 @@ export const globalStyles = StyleSheet.create({
     marginHorizontal: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#71B1C8'  // renew blue
+    backgroundColor: '#71B1C8',  // renew blue
+    borderRadius: 6,
   },
   locationTitle: {
     flex: 1,
@@ -33,11 +34,11 @@ export const globalStyles = StyleSheet.create({
     textAlign: 'center'
   },
   locationList: {
-      flex: 1,
-      marginVertical: 20,
-      marginHorizontal: 20,
-      padding: 10,
-      backgroundColor: '#fff'
+    flex: 1,
+    marginVertical: 20,
+    marginHorizontal: 20,
+    padding: 10,
+    backgroundColor: '#fff'
   },
   // Location screen styles
   locationScreenContainer: {
