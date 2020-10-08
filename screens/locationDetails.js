@@ -17,23 +17,22 @@ import { globalStyles } from '../styles/global';
 export default function LocationDetails({ route, navigation }) {
     //item takes the name to be passed along to the report page
     const item = { name: route.params.name};
-    const business = { currentState: route.params.currentState }
 
+    // If conditional function to change the color of business based on the current state
     function getBusinessStyle(currentState) {
         if (currentState == 'Not busy') {
             return globalStyles.notBusy;
         } else if (currentState == 'Slightly busy') {
             return globalStyles.slightlyBusy;
-        } else {
+        } else if (currentState == 'Busy') {
+            return globalStyles.busy;
+        } else if (currentState == 'Very busy') {
+            return globalStyles.veryBusy;
+        } else if (currentState == 'Extremely busy') {
             return globalStyles.extremelyBusy;
+        } else {
+            return globalStyles.detailsText;
         }
-        // return <span> {
-        //     currentState == 'Not busy' ? globalStyles.notBusy
-        //     : currentState == 'Slightly busy' ? globalStyles.slightlyBusy
-        //     : currentState == 'Busy' ? globalStyles.busy
-        //     : currentState == 'Very busy' ? globalStyles.veryBusy
-        //     : globalStyles.extremelyBusy }
-        //     </span>;
     };
 
     return (
@@ -42,7 +41,7 @@ export default function LocationDetails({ route, navigation }) {
             <Text style={globalStyles.detailsTex} >
                 Maximum capacity: { route.params.capacity }</Text>
             <Text style={styles.headers}>Business</Text>
-            <Text style={getBusinessStyle(business)}>{ route.params.currentState }</Text>
+            <Text style={getBusinessStyle(route.params.currentState)}>{ route.params.currentState }</Text>
             <Text style={styles.headers}>Estimated Numbers</Text>
             <Text style={globalStyles.numberText}>{ route.params.capacity }</Text>
             <Button title='Report' color='#009933'
