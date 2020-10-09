@@ -1,5 +1,7 @@
 # Freespace
 
+View the Freespace project details [here](https://github.com/calvin-cs262-fall2020-Freespace/Project).
+
 ## How to install/run
 
 1. Clone the repository onto your machine.
