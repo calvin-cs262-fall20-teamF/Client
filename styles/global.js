@@ -18,20 +18,17 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff'
   },
-  listButton: {
-    padding: 20,
-    marginVertical: 10,
-    marginHorizontal: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#71B1C8',  // renew blue
+  locationList: {
+    flex: 1,
     borderRadius: 6,
+    padding: 10,
+    backgroundColor: '#ddd'
   },
-  // card.js
+  // Card element
   card: {
     borderRadius: 6,
     elevation: 3,
-    backgroundColor: 'black',
+    backgroundColor: '#fff',
     shadowOffset: { width: 1, height: 1 },
     shadowColor: '#333',
     shadowOpacity: 0.3,
@@ -48,26 +45,25 @@ export const globalStyles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#333',              // light gray
-    textAlign: 'center'
   },
   titleContainer: {
-    flex: 3,
+    flex: 1,
     borderRadius: 6,
     padding: 0,
-    backgroundColor: 'red',
+    backgroundColor: '#fff',
   },
   statusContainer: {
     flex: 1,
-    backgroundColor: 'blue',
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   statusTitle: {
-    fontFamily: 'nunito-bold'
-  },
-  locationList: {
-    flex: 1,
-    borderRadius: 6,
-    padding: 10,
-    backgroundColor: '#ddd'
+    fontFamily: 'nunito-bold',
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+    textAlign: 'center'
   },
   /**************************
    * Location screen styles
@@ -80,16 +76,12 @@ export const globalStyles = StyleSheet.create({
   },
   locationText: {
     fontFamily: 'nunito-bold',
-    fontSize: 30,
+    fontSize: 25,
+    textAlign: 'center'
   },
   stateText: {
     fontFamily: 'nunito-regular',
     fontSize: 20
-  },
-  detailsText: {
-    fontFamily: 'nunito-bold',
-    padding: 10,
-    fontSize: 25,
   },
   numberText: {
     fontFamily: 'nunito-bold',
@@ -97,35 +89,27 @@ export const globalStyles = StyleSheet.create({
     marginBottom: 20,
     color: '#999900',
   },
-  notBusy: {
+  busynessTitle: {
     fontFamily: 'nunito-bold',
-    padding: 10,
-    color: '#009933',
     fontSize: 25,
+  },
+  /**************************
+   * Status colors
+   **************************/
+  notBusy: {
+    color: '#009933',
   },
   slightlyBusy: {
-    fontFamily: 'nunito-bold',
-    padding: 10,
     color: '#a5c932',
-    fontSize: 25,
   },
   busy: {
-    fontFamily: 'nunito-bold',
-    padding: 10,
     color: '#f8da07',
-    fontSize: 25,
   },
   veryBusy: {
-    fontFamily: 'nunito-bold',
-    padding: 10,
     color: '#ff9900',
-    fontSize: 25,
   },
   extremelyBusy: {
-    fontFamily: 'nunito-bold',
-    padding: 10,
     color: '#ff3300',
-    fontSize: 25,
   },
   headers: {
       fontFamily: 'nunito-bold',
@@ -133,7 +117,6 @@ export const globalStyles = StyleSheet.create({
       fontWeight: 'bold',
       color: '#8c8c8c',
       textAlign: 'center',
-      padding: 10,
       marginTop: 20,
   },
   reportButton: {

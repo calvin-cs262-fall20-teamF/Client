@@ -17,21 +17,26 @@ import { globalStyles } from '../styles/global';
 export default function Home({ navigation }) {
     // List of campus locations
     const [locations, addLocation] = useState([
-        // { name: 'KE Basketball Court', currentState: 'empty', capacity: '100', key: '1' },
-        // { name: 'KE Volleyball Court', currentState: 'sort of empty', capacity: '200', key: '2' },
         { name: 'Commons Dining Hall', currentState: 'Extremely busy', capacity: '300', key: '1' },
         { name: 'Knollcrest Dining Hall', currentState: 'Busy', capacity: '400', key: '2' },
-        // { name: 'Johnny\'s', currentState: 'full', capacity: '500', key: '5' },
-        // { name: 'Main Dance Studio', currentState: 'full', capacity: '600', key: '6' },
-        // { name: 'Dance Loft', currentState: 'full', capacity: '700', key: '7' },
-        // { name: 'Uppercrust', currentState: 'full', capacity: '700', key: '8' },
-        // { name: 'Hekman Library\n2nd Floor', currentState: 'full', capacity: '700', key: '9' },
-        // { name: 'Chapel', currentState: 'full', capacity: '700', key: '10' },
-        // { name: 'Meeter Center\nLecture Hall', currentState: 'full', capacity: '700', key: '11' },
-        // { name: 'Commons Annex Lecture Hall', currentState: 'full', capacity: '700', key: '12' },
-        // { name: 'Hoogenboom Basketball Courts', currentState: 'full', capacity: '700', key: '13' },
-        // { name: 'Venema Aquatic Center', currentState: 'full', capacity: '700', key: '14' },
     ]);
+
+    // If conditional function to change the color of business based on the current state
+    function getBusinessStyle(currentState) {
+        if (currentState == 'Not busy') {
+            return globalStyles.notBusy;
+        } else if (currentState == 'Slightly busy') {
+            return globalStyles.slightlyBusy;
+        } else if (currentState == 'Busy') {
+            return globalStyles.busy;
+        } else if (currentState == 'Very busy') {
+            return globalStyles.veryBusy;
+        } else if (currentState == 'Extremely busy') {
+            return globalStyles.extremelyBusy;
+        } else {
+            return globalStyles.detailsText;
+        }
+    };
 
     // Displays the FlatList containing all locations; each location can be tapped/clicked to
     // navigate to the LocationDetails screen.
@@ -44,7 +49,9 @@ export default function Home({ navigation }) {
                             <Text style={globalStyles.locationTitle}>{ item.name }</Text>
                         </View>
                         <View style={globalStyles.statusContainer}>
-                            <Text style={globalStyles.statusTitle}>{ item.currentState }</Text>
+                            <Text style={globalStyles.statusTitle}>
+                                <Text style={getBusinessStyle(item.currentState)}>{ item.currentState }</Text>
+                            </Text>
                         </View>
                     </Card>
                 </TouchableOpacity>
