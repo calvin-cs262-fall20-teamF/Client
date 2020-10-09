@@ -19,8 +19,8 @@ export default function Home({ navigation }) {
     const [locations, addLocation] = useState([
         // { name: 'KE Basketball Court', currentState: 'empty', capacity: '100', key: '1' },
         // { name: 'KE Volleyball Court', currentState: 'sort of empty', capacity: '200', key: '2' },
-        { name: 'Commons Dining Hall', currentState: 'busy', capacity: '300', key: '1' },
-        { name: 'Knollcrest Dining Hall', currentState: 'full', capacity: '400', key: '2' },
+        { name: 'Commons Dining Hall', currentState: 'Extremely busy', capacity: '300', key: '1' },
+        { name: 'Knollcrest Dining Hall', currentState: 'Busy', capacity: '400', key: '2' },
         // { name: 'Johnny\'s', currentState: 'full', capacity: '500', key: '5' },
         // { name: 'Main Dance Studio', currentState: 'full', capacity: '600', key: '6' },
         // { name: 'Dance Loft', currentState: 'full', capacity: '700', key: '7' },
