@@ -17,8 +17,11 @@ import { globalStyles } from '../styles/global';
 export default function Home({ navigation }) {
     // List of campus locations
     const [locations, addLocation] = useState([
-        { name: 'Commons Dining Hall', currentState: 'Extremely busy', capacity: '300', key: '1' },
-        { name: 'Knollcrest Dining Hall', currentState: 'Busy', capacity: '400', key: '2' },
+        { name: 'Commons Dining Hall', currentState: 'Not busy', capacity: '300', key: '1' },
+        { name: 'Knollcrest Dining Hall', currentState: 'Slightly busy', capacity: '400', key: '2' },
+        { name: 'Uppercrust', currentState: 'Busy', capacity: '400', key: '3' },
+        { name: 'Johnny\'s', currentState: 'Very busy', capacity: '400', key: '4' },
+        { name: 'Peet\'s Coffee', currentState: 'Extremely busy', capacity: '400', key: '5' },
     ]);
 
     // If conditional function to change the color of business based on the current state
