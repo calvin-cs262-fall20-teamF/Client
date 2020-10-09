@@ -20,9 +20,13 @@ export const globalStyles = StyleSheet.create({
   },
   locationList: {
     flex: 1,
-    borderRadius: 6,
-    padding: 10,
+    padding: 5,
     backgroundColor: '#ddd'
+  },
+  test: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: 'red',
   },
   // Card element
   card: {
