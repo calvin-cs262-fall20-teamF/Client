@@ -100,7 +100,7 @@ export const globalStyles = StyleSheet.create({
   notBusy: {
     fontFamily: 'nunito-bold',
     padding: 10,
-    color: '#ffeb3b',
+    color: '#009933',
     fontSize: 25,
   },
   slightlyBusy: {
@@ -112,7 +112,7 @@ export const globalStyles = StyleSheet.create({
   busy: {
     fontFamily: 'nunito-bold',
     padding: 10,
-    color: '#ffff00',
+    color: '#f8da07',
     fontSize: 25,
   },
   veryBusy: {
