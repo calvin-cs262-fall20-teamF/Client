@@ -11,7 +11,9 @@
 import { StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({
-  // Home screen styles
+  /**************************
+   * Home screen styles
+   **************************/
   homeContainer: {
     flex: 1,
     backgroundColor: '#fff'
@@ -25,23 +27,51 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: '#71B1C8',  // renew blue
     borderRadius: 6,
   },
+  // card.js
+  card: {
+    borderRadius: 6,
+    elevation: 3,
+    backgroundColor: 'black',
+    shadowOffset: { width: 1, height: 1 },
+    shadowColor: '#333',
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
+    marginHorizontal: 4,
+    marginVertical: 6,
+  },
+  cardContent: {
+    flexDirection: 'row',
+    padding: 20,
+  },
   locationTitle: {
-    flex: 1,
     fontFamily: 'nunito-bold',
     fontSize: 18,
     fontWeight: 'bold',
     color: '#333',              // light gray
     textAlign: 'center'
   },
+  titleContainer: {
+    flex: 3,
+    borderRadius: 6,
+    padding: 0,
+    backgroundColor: 'red',
+  },
+  statusContainer: {
+    flex: 1,
+    backgroundColor: 'blue',
+  },
+  statusTitle: {
+    fontFamily: 'nunito-bold'
+  },
   locationList: {
     flex: 1,
-    marginVertical: 20,
-    marginHorizontal: 20,
+    borderRadius: 6,
     padding: 10,
-    backgroundColor: '#fff'
-
+    backgroundColor: '#ddd'
   },
-  // Location screen styles
+  /**************************
+   * Location screen styles
+   **************************/
   locationScreenContainer: {
     flex: 1,
     padding: 10,
@@ -96,5 +126,5 @@ export const globalStyles = StyleSheet.create({
     padding: 10,
     color: '#ff3300',
     fontSize: 25,
-  }
+  },
 });
