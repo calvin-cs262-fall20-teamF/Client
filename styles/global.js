@@ -127,4 +127,17 @@ export const globalStyles = StyleSheet.create({
     color: '#ff3300',
     fontSize: 25,
   },
+  headers: {
+      fontFamily: 'nunito-bold',
+      fontSize: 25,
+      fontWeight: 'bold',
+      color: '#8c8c8c',
+      textAlign: 'center',
+      padding: 10,
+      marginTop: 20,
+  },
+  reportButton: {
+      padding: 10,
+  }
 });
+
