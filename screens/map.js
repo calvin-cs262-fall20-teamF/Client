@@ -18,7 +18,6 @@ export default function Map({ navigation }) {
   return (
 
     <View style={styles.container}>
-      <Text style={globalStyles.locationTitle}>campus map</Text>
       <Image style={styles.image}
         source={{ uri: 'https://calvin.edu/dotAsset/184d0710-a659-4ef6-bc18-d0ac7d9cd057/' }} />
     </View>
