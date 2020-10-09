@@ -42,12 +42,12 @@ export default function LocationDetails({ route, navigation }) {
             <Text style={globalStyles.locationText}>{ route.params.name }</Text>
             <Text style={globalStyles.detailsTex} >
                 Maximum capacity: { route.params.capacity }</Text>
-            <Text style={styles.headers}>Business</Text>
+            <Text style={globalStyles.headers}>Business</Text>
             <Text style={getBusinessStyle(route.params.currentState)}>{ route.params.currentState }</Text>
-            <Text style={styles.headers}>Estimated Numbers</Text>
+            <Text style={globalStyles.headers}>Estimated Numbers</Text>
             <Text style={globalStyles.numberText}>{ route.params.capacity }</Text>
             <Button title='Report' color='#009933'
-                onPress={() => navigation.navigate('reportPage', item)} style={styles.reportButton}>
+                onPress={() => navigation.navigate('reportPage', item)} style={globalStyles.reportButton}>
                     Report
             </Button>
         </View>
