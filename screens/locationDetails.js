@@ -11,11 +11,13 @@
 import React from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 
+
 // import custom functions and styles
 import { globalStyles } from '../styles/global';
 
 export default function LocationDetails({ route, navigation }) {
     //item takes the name to be passed along to the report page
+
     const item = { name: route.params.name};
 
     // If conditional function to change the color of business based on the current state
@@ -51,18 +53,4 @@ export default function LocationDetails({ route, navigation }) {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    headers: {
-        fontFamily: 'nunito-bold',
-        fontSize: 25,
-        fontWeight: 'bold',
-        color: '#8c8c8c',
-        textAlign: 'center',
-        padding: 10,
-        marginTop: 20,
-    },
-    reportButton: {
-        padding: 10,
-    }
-})
+  

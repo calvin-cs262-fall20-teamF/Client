@@ -1,0 +1,37 @@
+/***************************************************************
+ * reportStack.js
+ *
+ * Last modified: September 29, 2020
+ *
+ * reportStack.js creates the stack that will be used for user report
+ * this will drive the application's
+ * user report feature(scale, submit, etc)
+ ***************************************************************/
+
+// import functions and libraries
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import { View, Text, Button, Image } from 'react-native';
+
+// import custom functions and styles
+import Report from '../screens/userReport';
+import Header from '../shared/header';
+import { globalStyles } from '../styles/global';
+
+const Stack = createStackNavigator();
+export default function MapStack() {
+  return (
+    <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: '#8C2131', height: 60 }, headerTintColor: '#fff' }}>
+      <Stack.Screen
+        name="Report"
+        component={Report}
+        options={{
+
+          headerTitle: () => (
+            <Header title='User Report' />
+          )
+        }}
+      />
+    </Stack.Navigator>
+  )
+}
