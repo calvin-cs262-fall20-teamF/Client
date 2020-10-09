@@ -1,10 +1,10 @@
 /***************************************************************
  * homeStack.js
- * 
+ *
  * Last modified: September 29, 2020
- * 
+ *
  * homeStack.js creates the stack that will be used for stacking
- * Home and LocationDetails; this will drive the application's 
+ * Home and LocationDetails; this will drive the application's
  * navigation feature.
  ***************************************************************/
 
@@ -16,6 +16,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from '../screens/home';
 import LocationDetails from '../screens/locationDetails';
 import ReportPage from '../screens/reportPage';
+import Header from '../shared/header';
 import { globalStyles } from '../styles/global';
 
 const Stack = createStackNavigator();
@@ -25,7 +26,11 @@ export default function HomeStack() {
             <Stack.Screen
                 name="Home"
                 component={Home}
-                options={{title: 'Home'}}
+                options={{
+
+                headerTitle: () => (
+                <Header title='Home' />
+                )}}
             />
             <Stack.Screen
                 name="LocationDetails"
