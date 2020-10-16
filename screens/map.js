@@ -16,7 +16,6 @@ import { globalStyles } from '../styles/global';
 
 export default function Map({ navigation }) {
   return (
-
     <View style={styles.container}>
       <Text style={globalStyles.locationTitle}>campus map</Text>
       <Image style={styles.image}
