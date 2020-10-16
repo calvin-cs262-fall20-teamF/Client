@@ -73,6 +73,10 @@ export const globalStyles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff'     // white
   },
+  locationImage: {
+    width: 300,
+    height: 200,
+  },
   locationText: {
     fontFamily: 'nunito-bold',
     fontSize: 25,

@@ -23,21 +23,38 @@ export default function ReportPage({ route, navigation }) {
         {name: 'BUSY', textColor: {color: '#333'}, bgColor: globalStyles.busyBackground, weight: '3', key: '3'},
         {name: 'VERY BUSY', textColor: {color: '#333'}, bgColor: globalStyles.veryBusyBackground, weight: '4', key: '4'},
         {name: 'EXTREMELY BUSY', textColor: {color: '#333'}, bgColor: globalStyles.extremelyBusyBackground, weight: '5', key: '5'},
-        {name: 'SUBMIT', textColor: {color: '#fff'}, bgColor: globalStyles.submitButton, key: '6'},
     ]);
 
     return (
     <View style={globalStyles.reportScreenContainer}>
         <Text style={globalStyles.locationText}>{ route.params.name } </Text>
         
+        {/* Status buttons */}
+        {/* <FlatList style={globalStyles.statusList} data={activityStatus} renderItem={({ item }) => (
+            <TouchableOpacity>
+                <StatusButton name={item.name} buttonColor={item.bgColor}>
+                    <Text style={[globalStyles.statusText, item.textColor]}>{ item.name }</Text>
+                </StatusButton>
+            </TouchableOpacity>
+        )} /> */}
         <FlatList style={globalStyles.statusList} data={activityStatus} renderItem={({ item }) => (
             <TouchableOpacity>
                 <StatusButton name={item.name} buttonColor={item.bgColor}>
                     <Text style={[globalStyles.statusText, item.textColor]}>{ item.name }</Text>
                 </StatusButton>
             </TouchableOpacity>
-            
-        )} />
+        )}>
+        </FlatList>
+
+        {/* Submit button */}
+        <View>
+            <TouchableOpacity onPress={() => navigation.dispatch(StackActions.popToTop())}>
+                <StatusButton name="SUBMIT" buttonColor={globalStyles.submitButton}>
+                    <Text style={[globalStyles.statusText, {color: '#fff'}]}>SUBMIT</Text>
+                </StatusButton>
+            </TouchableOpacity>
+        </View>
+
     </View>
 
     )}

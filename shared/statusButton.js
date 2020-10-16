@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { View, Alert } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 // import { CommonActions } from '@react-navigation/native';
 import { globalStyles } from '../styles/global';
@@ -12,7 +12,7 @@ export default function StatusButton(props) {
     };
 
     const submitHandler = () => {
-        alert('Report is submitted!');
+        Alert.alert('Report submitted!');
     };
 
     if(props.name == 'SUBMIT'){
