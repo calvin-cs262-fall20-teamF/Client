@@ -19,7 +19,6 @@ export default function Map({ navigation }) {
 
   return (
 
-
     <ImageOverlay
       source={{ uri: "https://calvin.edu/dotAsset/184d0710-a659-4ef6-bc18-d0ac7d9cd057/" }}
       height={700}
@@ -51,7 +50,6 @@ export default function Map({ navigation }) {
     //     {/* <Image style={styles.marker} source={{uri: "https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/67-512.png"}} />
     //     <Text style={styles.name}>Amelia Edwards</Text> */}
     // </View >
-
 
   );
 }

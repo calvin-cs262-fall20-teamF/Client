@@ -1,7 +1,7 @@
 /***************************************************************
  * locationDetails.js
  * 
- * Last modified: September 29, 2020
+ * Last modified: October 9, 2020
  * 
  * locationDetails.js displays location information provided
  * in the location list (see home.js).
@@ -46,9 +46,9 @@ export default function LocationDetails({ route, navigation }) {
             </Text>
             <Text style={globalStyles.headers}>Estimated Numbers:</Text>
             <Text style={globalStyles.numberText}>{ route.params.capacity }</Text>
-            <Button title='Report' color='#009933'
+            <Button title='Report Activity' color='#009933'
                 onPress={() => navigation.navigate('reportPage', item)} style={globalStyles.reportButton}>
-                    Report
+                Report
             </Button>
         </View>
     );

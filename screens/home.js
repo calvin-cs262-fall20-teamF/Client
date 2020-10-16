@@ -1,7 +1,7 @@
 /***************************************************************
  * home.js
  * 
- * Last modified: September 29, 2020
+ * Last modified: October 9, 2020
  * 
  * home.js contains and displays the list of campus locations.
  ***************************************************************/
@@ -11,14 +11,17 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native';
 
 // import custom functions and styles
-import Card from '../shared/card';
+import LocationCard from '../shared/locationCard';
 import { globalStyles } from '../styles/global';
 
 export default function Home({ navigation }) {
     // List of campus locations
     const [locations, addLocation] = useState([
-        { name: 'Commons Dining Hall', currentState: 'Extremely busy', capacity: '300', key: '1' },
-        { name: 'Knollcrest Dining Hall', currentState: 'Busy', capacity: '400', key: '2' },
+        { name: 'Commons Dining Hall', currentState: 'Not busy', capacity: '200', key: '1' },
+        { name: 'Knollcrest Dining Hall', currentState: 'Slightly busy', capacity: '150', key: '2' },
+        { name: 'Uppercrust', currentState: 'Busy', capacity: '75', key: '3' },
+        { name: 'Johnny\'s', currentState: 'Very busy', capacity: '100', key: '4' },
+        { name: 'Peet\'s Coffee', currentState: 'Extremely busy', capacity: '30', key: '5' },
     ]);
 
     // If conditional function to change the color of business based on the current state
@@ -44,7 +47,7 @@ export default function Home({ navigation }) {
         <View style={globalStyles.homeContainer}>
             <FlatList style={globalStyles.locationList} data={locations} renderItem={({ item }) => (
                 <TouchableOpacity onPress={() => navigation.navigate('LocationDetails', item)}>
-                    <Card>
+                    <LocationCard>
                         <View style={globalStyles.titleContainer}>
                             <Text style={globalStyles.locationTitle}>{ item.name }</Text>
                         </View>
@@ -53,7 +56,7 @@ export default function Home({ navigation }) {
                                 <Text style={getBusinessStyle(item.currentState)}>{ item.currentState }</Text>
                             </Text>
                         </View>
-                    </Card>
+                    </LocationCard>
                 </TouchableOpacity>
             )} />
         </View>

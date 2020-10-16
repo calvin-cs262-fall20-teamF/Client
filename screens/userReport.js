@@ -1,7 +1,7 @@
 /***************************************************************
  * userReport.js
  *
- * Last modified: September 29, 2020
+ * Last modified: October 9, 2020
  *
  * userReport.js displays inputs and submit button
  * (see home.js).
@@ -18,11 +18,11 @@ export default function userReport({ navigation }) {
   return (
 
     <View>
-      <Text style={globalStyles.locationTitle}>user report{'\n'}</Text>
       <Button
         onPress={() => alert('Report is submitted!')}
         title="SUBMIT"
         color="#d2b48c"
+
       />
     </View>
 
