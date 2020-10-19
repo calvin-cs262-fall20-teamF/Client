@@ -17,11 +17,11 @@ import { globalStyles } from '../styles/global';
 export default function Home({ navigation }) {
     // List of campus locations
     const [locations, addLocation] = useState([
-        { name: 'Commons Dining Hall', currentState: 'Not busy', capacity: '200', key: '1' },
-        { name: 'Knollcrest Dining Hall', currentState: 'Slightly busy', capacity: '150', key: '2' },
+        { name: 'Commons Dining Hall', currentState: 'Not busy', capacity: '200', image: '../assets/locations/commons.jpg', key: '1' },
+        { name: 'Knollcrest Dining Hall', currentState: 'Slightly busy', capacity: '150', image: '../assets/locations/knollcrest.jpg', key: '2' },
         { name: 'Uppercrust', currentState: 'Busy', capacity: '75', key: '3' },
-        { name: 'Johnny\'s', currentState: 'Very busy', capacity: '100', key: '4' },
-        { name: 'Peet\'s Coffee', currentState: 'Extremely busy', capacity: '30', key: '5' },
+        { name: 'Johnny\'s', currentState: 'Very busy', capacity: '100', image: '../assets/locations/johnnys.jpg', key: '4' },
+        { name: 'Peet\'s Coffee', currentState: 'Extremely busy', capacity: '30', image: '../assets/locations/peets.jpg', key: '5' },
     ]);
 
     // If conditional function to change the color of business based on the current state

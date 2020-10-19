@@ -73,6 +73,10 @@ export const globalStyles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff'     // white
   },
+  locationImage: {
+    width: 300,
+    height: 200,
+  },
   locationText: {
     fontFamily: 'nunito-bold',
     fontSize: 25,
@@ -113,13 +117,12 @@ export const globalStyles = StyleSheet.create({
   statusList: {
     flex: 1,
     padding: 5,
-    backgroundColor: '#ddd'     // light gray
+    backgroundColor: '#ddd',    // light gray
   },
   // Status card element
   statusButton: {
     borderRadius: 100,
     elevation: 3,
-    backgroundColor: '#fff',    // white
     shadowOffset: { width: 1, height: 1 },
     shadowColor: '#333',        // dark gray
     shadowOpacity: 0.3,
@@ -129,13 +132,12 @@ export const globalStyles = StyleSheet.create({
     alignItems: 'center'
   },
   statusButtonSelected: {
-    backgroundColor: '#eee'     // light gray
+    backgroundColor: '#aaa'     // light gray
   },
   statusText: {
     fontFamily: 'nunito-bold',
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: 'bold',
-    color: '#333',              // light gray
   },
   /**************************
    * Status colors
@@ -154,6 +156,27 @@ export const globalStyles = StyleSheet.create({
   },
   extremelyBusy: {
     color: '#ff3300',           // red
+  },
+  /**************************
+   * Status button background colors
+   **************************/
+  notBusyBackground: {
+    backgroundColor: '#009933',
+  },
+  slightlyBusyBackground: {
+    backgroundColor: '#a5c932',           // light green
+  },
+  busyBackground: {
+    backgroundColor: '#f8da07',           // yellow
+  },
+  veryBusyBackground: {
+    backgroundColor: '#ff9900',           // orange
+  },
+  extremelyBusyBackground: {
+    backgroundColor: '#ff3300',           // red
+  },
+  submitButton: {
+    backgroundColor: '#0066FF'
   },
 });
 
