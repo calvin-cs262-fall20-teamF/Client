@@ -17,7 +17,7 @@ import { globalStyles } from '../styles/global';
 
 export default function ReportPage({ route, navigation }) {
     //makes a list for report buttons, the weight property is for the database
-    const [activityStatus, setSelected] = useState([
+    const [buttonList, setButtons] = useState([
         {name: 'NOT BUSY', textColor: {color: '#333'}, bgColor: globalStyles.notBusyBackground, isSelected: false, weight: '1', key: '1'},
         {name: 'SLIGHTLY BUSY', textColor: {color: '#333'}, bgColor: globalStyles.slightlyBusyBackground, isSelected: false, weight: '2', key: '2'},
         {name: 'BUSY', textColor: {color: '#333'}, bgColor: globalStyles.busyBackground, isSelected: false, weight: '3', key: '3'},
@@ -28,25 +28,24 @@ export default function ReportPage({ route, navigation }) {
     // stores the active button to allow only one button as "grayed out"
     const [activeButton, setActiveButton] = useState(false);
 
-    // sets active button to the one that was most recently selected
+    // handles changing button status
     const statusButtonCallback = (activeID) => {
-        setActiveButton(true);
-        console.log("Active ID: " + activeID);
-        console.log("Active button: " + activeButton);
-        //// change isSelected in button activeIndex to true ////
-        // change isSelected to false for all buttons that are selected (in this case, only one is changed)
-        var newSelected = activityStatus.map((button) => {
-            if(button.key === activeButton.toString()){
-                button.isSelected = true;
+        // find the button to change status
+        const index = buttonList.findIndex(element => element.key == activeID);
+        // create copy of active and change isSelected of target button to 'true'
+        let newButtons = [...buttonList];
+        // check if one button has already been selected
+        for(var i = 0; i < newButtons.length; i++){
+            if(newButtons[i].isSelected){
+                // change isSelected of previously selected button to 'false'
+                newButtons[i].isSelected = false;
             }
-            else {
-                button.isSelected = false;
-            }
-            // console.log(button);
-        })
-        // console.log(newSelected);
-        setSelected(newSelected);
-        // console.log(activityStatus);
+        }
+        // change isSelected of target button to 'true'
+        newButtons[index] = {...newButtons[index], isSelected: !newButtons[index].isSelected};
+
+        // update buttonList
+        setButtons(newButtons);
     };
 
 
@@ -54,7 +53,7 @@ export default function ReportPage({ route, navigation }) {
     <View style={globalStyles.reportScreenContainer}>
         <Text style={globalStyles.locationText}>{ route.params.name } </Text>
 
-        <FlatList style={globalStyles.statusList} data={activityStatus} renderItem={({ item }) => (
+        <FlatList style={globalStyles.statusList} data={buttonList} renderItem={({ item }) => (
             <TouchableOpacity>
                 <StatusButton name={item.name} buttonColor={item.bgColor} buttonID={item.key} selected={item.isSelected} reportCallback={statusButtonCallback}>
                     <Text style={[globalStyles.statusText, item.textColor]}>{ item.name }</Text>
