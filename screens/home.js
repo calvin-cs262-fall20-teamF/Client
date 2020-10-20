@@ -1,14 +1,14 @@
 /***************************************************************
  * home.js
  * 
- * Last modified: October 9, 2020
+ * Last modified: October 19, 2020
  * 
  * home.js contains and displays the list of campus locations.
  ***************************************************************/
 
 // import functions and libraries
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList, Button } from 'react-native';
 
 // import custom functions and styles
 import LocationCard from '../shared/locationCard';
@@ -25,7 +25,7 @@ export default function Home({ navigation }) {
     ]);
 
     // If conditional function to change the color of business based on the current state
-    function getBusinessStyle(currentState) {
+    function getActivityStyle(currentState) {
         if (currentState == 'Not busy') {
             return globalStyles.notBusy;
         } else if (currentState == 'Slightly busy') {
@@ -53,8 +53,12 @@ export default function Home({ navigation }) {
                         </View>
                         <View style={globalStyles.statusContainer}>
                             <Text style={globalStyles.statusTitle}>
-                                <Text style={getBusinessStyle(item.currentState)}>{ item.currentState }</Text>
+                                <Text style={getActivityStyle(item.currentState)}>{ item.currentState }</Text>
                             </Text>
+                            <Text style={globalStyles.headers}>Estimated Numbers:</Text>
+                            <Text style={globalStyles.numberText}>{ item.capacity }</Text>
+                            <Button title='Report Activity' color='#009933' onPress={() => navigation.navigate('reportPage', item)} style={globalStyles.reportButton}> Report
+                            </Button>
                         </View>
                     </LocationCard>
                 </TouchableOpacity>

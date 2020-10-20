@@ -1,7 +1,7 @@
 /***************************************************************
  * locationDetails.js
  * 
- * Last modified: October 9, 2020
+ * Last modified: October 19, 2020
  * 
  * locationDetails.js displays location information provided
  * in the location list (see home.js).
@@ -21,7 +21,7 @@ export default function LocationDetails({ route, navigation }) {
     const item = { name: route.params.name};
 
     // If conditional function to change the color of business based on the current state
-    function getBusinessStyle(currentState) {
+    function getActivityStyle(currentState) {
         if (currentState == 'Not busy') {
             return globalStyles.notBusy;
         } else if (currentState == 'Slightly busy') {
@@ -41,8 +41,8 @@ export default function LocationDetails({ route, navigation }) {
         <View style={globalStyles.locationScreenContainer}>
 
             <Text style={globalStyles.headers}>Activity Status:</Text>
-            <Text style={globalStyles.busynessTitle}>
-                <Text style={getBusinessStyle(route.params.currentState)}>{ route.params.currentState }</Text>
+            <Text style={globalStyles.activityTitle}>
+                <Text style={getActivityStyle(route.params.currentState)}>{ route.params.currentState }</Text>
             </Text>
             <Text style={globalStyles.headers}>Estimated Numbers:</Text>
             <Text style={globalStyles.numberText}>{ route.params.capacity }</Text>
