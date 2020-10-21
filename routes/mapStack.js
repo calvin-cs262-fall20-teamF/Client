@@ -35,7 +35,7 @@ export default function MapStack() {
           headerRight: () => (
             <Button
               onPress={() => alert('This is a button that will update reports!')}
-              title="UPDATE"
+              title="REFRESH"
               color="#d2b48c"
             />
           ),
