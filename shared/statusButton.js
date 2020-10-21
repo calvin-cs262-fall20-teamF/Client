@@ -1,3 +1,4 @@
+import { PropsService } from '@ui-kitten/components/devsupport';
 import React, {useState} from 'react';
 import { View, Alert } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -5,10 +6,11 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { globalStyles } from '../styles/global';
 
 export default function StatusButton(props) {
-    const [isSelected, setSelected] = useState(false);
+    const [isSelected, setSelected] = useState(props.selected);
 
     const pressHandler = () => {
         setSelected(!isSelected);
+        props.reportCallback(props.buttonID);
     };
 
     const submitHandler = () => {
@@ -37,7 +39,7 @@ export default function StatusButton(props) {
                 style={[
                     props.buttonColor,
                     globalStyles.statusButton,
-                    isSelected && globalStyles.statusButtonSelected
+                    props.selected && globalStyles.statusButtonSelected
                 ]}
             >
                 <View style={globalStyles.cardContent}>
