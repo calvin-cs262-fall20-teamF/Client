@@ -13,7 +13,6 @@ View the Freespace project details [here](https://github.com/calvin-cs262-fall20
 - @react-navigation/native
 - @react-navigation/stack
 - @react-navigation/bottom-tabs
-- @react-modal-image
 
 **expo:**
 - react-native-gesture-handler
@@ -21,6 +20,8 @@ View the Freespace project details [here](https://github.com/calvin-cs262-fall20
 - react-native-screens
 - react-native-safe-area-context
 - @react-native-community/masked-view
+- @react-modal-image
+
 
 #### Other Freespace repos:
 - [Project Materials](https://github.com/calvin-cs262-fall2020-Freespace/Project)
