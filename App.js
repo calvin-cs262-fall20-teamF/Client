@@ -1,9 +1,9 @@
 /***************************************************************
  * App.js
- * 
+ *
  * Organization: Freespace
  * Last modified: September 29, 2020
- * 
+ *
  * App.js contains all of the code necessary to run Freespace.
  ***************************************************************/
 
@@ -21,19 +21,19 @@ MaterialCommunityIcons
 // import custom functions and styles
 import Navigator from './routes/homeStack'
 import MapNav from './routes/mapStack'
-import UserReport from './routes/reportStack'
+import About from './routes/aboutStack'
 
 import { globalStyles } from './styles/global';
 
 /*******************************************************
  * getFonts
- * 
- * Loads fonts asynchronously into a specified name 
+ *
+ * Loads fonts asynchronously into a specified name
  * for later use
  *******************************************************/
 const getFonts = () => Font.loadAsync({
-    'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
-    'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf')
+  'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
+  'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf')
 });
 
 //tab navigation
@@ -83,13 +83,13 @@ export default function App() {
               ),
             }} />
           <Tab.Screen
-            name="UserReport"
-            component={UserReport}
+            name="About FreeSpace"
+            component={About}
             options={{
-              tabBarLabel: 'User Report',
+              tabBarLabel: 'About',
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons
-                  name="book"
+                  name="information"
                   color={color}
                   size={size}
                 />
@@ -104,8 +104,8 @@ export default function App() {
   else {
     return (
       <AppLoading
-      startAsync={getFonts}
-      onFinish={() => setFontsLoaded(true)}
+        startAsync={getFonts}
+        onFinish={() => setFontsLoaded(true)}
       />
     )
   }

@@ -14,7 +14,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { View, Text, Button, Image } from 'react-native';
 
 // import custom functions and styles
-import Report from '../screens/about';
+import About from '../screens/about';
 import Header from '../shared/header';
 import { globalStyles } from '../styles/global';
 
