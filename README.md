@@ -13,6 +13,7 @@ View the Freespace project details [here](https://github.com/calvin-cs262-fall20
 - @react-navigation/native
 - @react-navigation/stack
 - @react-navigation/bottom-tabs
+- @react-modal-image
 
 **expo:**
 - react-native-gesture-handler
