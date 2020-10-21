@@ -14,21 +14,21 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { View, Text, Button, Image } from 'react-native';
 
 // import custom functions and styles
-import Report from '../screens/userReport';
+import Report from '../screens/about';
 import Header from '../shared/header';
 import { globalStyles } from '../styles/global';
 
 const Stack = createStackNavigator();
-export default function MapStack() {
+export default function aboutStack() {
   return (
     <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: '#8C2131', height: 60 }, headerTintColor: '#fff' }}>
       <Stack.Screen
-        name="Report"
-        component={Report}
+        name="About"
+        component={About}
         options={{
 
           headerTitle: () => (
-            <Header title='User Report' />
+            <Header title='About FreeSpace' />
           )
         }}
       />

@@ -10,7 +10,8 @@
 // import functions and libraries
 import React, { Component } from 'react';
 import ImageOverlay from "react-native-image-overlay";
-import { StyleSheet, View, Text, ActivityIndicator, Image, ImageBackground, Button } from 'react-native';
+import ModalImage from "react-modal-image";
+import { StyleSheet, View, Text, ActivityIndicator, Image, ImageBackground, Button, Modal } from 'react-native';
 
 // import custom functions and styles
 import { globalStyles } from '../styles/global';
@@ -35,7 +36,7 @@ export default function Map({ navigation }) {
         <Image style={styles.bluemarker} source={{ uri: "https://cdn4.iconfinder.com/data/icons/location-map-1/64/x-18-256.png" }} />
         <Image style={styles.yellowmarker} source={{ uri: "https://cdn3.iconfinder.com/data/icons/flat-pro-basic-set-1-1/32/location-gray-256.png" }} />
         <Image style={styles.greenmarker} source={{ uri: "https://cdn3.iconfinder.com/data/icons/flat-pro-basic-set-1-1/32/location-green-256.png" }} />
-        <Image style={styles.orangemarker} source={{ uri: "https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/location-256.png" }} />
+        <ModalImage style={styles.orangemarker} small="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/location-256.png" alt="orange marker" title="the orange button shows moderate activity in the area" > hello </ModalImage>
 
       </View>
     </ImageOverlay>
