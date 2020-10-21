@@ -22,6 +22,7 @@
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
     "react-image-marker": "^1.2.0",
+    "react-modal-image": "^2.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-image-marker": "^0.6.1",
