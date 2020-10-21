@@ -1,7 +1,7 @@
 /***************************************************************
  * global.js
  *
- * Last modified: October 9, 2020
+ * Last modified: October 19, 2020
  *
  * global.js creates the StyleSheet that contains details for
  * all style props.
@@ -84,7 +84,7 @@ export const globalStyles = StyleSheet.create({
   },
   headers: {
     fontFamily: 'nunito-bold',
-    fontSize: 25,
+    fontSize: 15,
     fontWeight: 'bold',
     color: '#8c8c8c',           // very light gray
     textAlign: 'center',
@@ -100,7 +100,7 @@ export const globalStyles = StyleSheet.create({
     marginBottom: 20,
     color: '#999900',           // gold
   },
-  busynessTitle: {
+  activityTitle: {
     fontFamily: 'nunito-bold',
     fontSize: 25,
   },
