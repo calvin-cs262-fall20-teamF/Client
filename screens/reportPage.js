@@ -28,6 +28,9 @@ export default function ReportPage({ route, navigation }) {
     // stores the active button to allow only one button as "grayed out"
     const [activeButton, setActiveButton] = useState(false);
 
+    // keeps the submit button disabled until a selection is made
+    const [submitBlocker, setSubmitBlocker] = useState(true);
+
     // handles changing button status
     const statusButtonCallback = (activeID) => {
         // find the button to change status
@@ -46,6 +49,9 @@ export default function ReportPage({ route, navigation }) {
 
         // update buttonList
         setButtons(newButtons);
+
+        //sets the SubmitBlocker hook to false
+        setSubmitBlocker(false);
     };
 
 
@@ -64,8 +70,8 @@ export default function ReportPage({ route, navigation }) {
 
         {/* Submit button */}
         <View>
-            <TouchableOpacity onPress={() => navigation.dispatch(StackActions.popToTop())}>
-                <StatusButton name="SUBMIT" buttonColor={globalStyles.submitButton}>
+            <TouchableOpacity onPress={() => navigation.dispatch(StackActions.popToTop())} disabled={submitBlocker}>
+                <StatusButton name="SUBMIT" isSelected={true} buttonColor={[submitBlocker? globalStyles.statusButtonSelected : globalStyles.submitButton]}>
                     <Text style={[globalStyles.statusText, {color: '#fff'}]}>SUBMIT</Text>
                 </StatusButton>
             </TouchableOpacity>
