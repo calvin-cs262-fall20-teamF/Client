@@ -1,14 +1,18 @@
 import React, {useState} from 'react';
-import { View } from 'react-native';
+import { View, Alert } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { globalStyles } from '../styles/global';
 
-export default function StatusButton(props) {
+export default function SubmitButton(props) {
     const [isSelected, setSelected] = useState(props.selected);
 
     const pressHandler = () => {
-        setSelected(!isSelected);
-        props.reportCallback(props.buttonID);
+        if(props.invalid) {
+            Alert.alert('Please select an option first.')
+        }
+        else {
+            Alert.alert('Report submitted!');
+        }
     };
 
     return (
@@ -17,7 +21,6 @@ export default function StatusButton(props) {
             style={[
                 props.buttonColor,
                 globalStyles.statusButton,
-                props.selected && globalStyles.statusButtonSelected
             ]}
         >
             <View style={globalStyles.cardContent}>

@@ -13,6 +13,7 @@ import { StackActions } from '@react-navigation/native';
 
 // import custom functions and styles
 import StatusButton from '../shared/statusButton';
+import SubmitButton from '../shared/submitButton';
 import { globalStyles } from '../styles/global';
 
 export default function ReportPage({ route, navigation }) {
@@ -59,6 +60,7 @@ export default function ReportPage({ route, navigation }) {
     <View style={globalStyles.reportScreenContainer}>
         <Text style={globalStyles.locationText}>{ route.params.name } </Text>
 
+        {/* Report buttons */}
         <FlatList style={globalStyles.statusList} data={buttonList} renderItem={({ item }) => (
             <TouchableOpacity>
                 <StatusButton name={item.name} buttonColor={item.bgColor} buttonID={item.key} selected={item.isSelected} reportCallback={statusButtonCallback}>
@@ -71,9 +73,14 @@ export default function ReportPage({ route, navigation }) {
         {/* Submit button */}
         <View>
             <TouchableOpacity onPress={() => navigation.dispatch(StackActions.popToTop())} disabled={submitBlocker}>
-                <StatusButton name="SUBMIT" isSelected={true} buttonColor={[submitBlocker? globalStyles.statusButtonSelected : globalStyles.submitButton]}>
+                <SubmitButton 
+                    name="SUBMIT" 
+                    isSelected={true} 
+                    buttonColor={[submitBlocker? globalStyles.statusButtonSelected : globalStyles.submitButton]}
+                    invalid={submitBlocker}
+                    >
                     <Text style={[globalStyles.statusText, {color: '#fff'}]}>SUBMIT</Text>
-                </StatusButton>
+                </SubmitButton>
             </TouchableOpacity>
         </View>
 
