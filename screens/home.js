@@ -17,11 +17,11 @@ import { globalStyles } from '../styles/global';
 export default function Home({ navigation }) {
     // List of campus locations
     const [locations, addLocation] = useState([
-        { name: 'Commons Dining Hall', currentState: 'Not busy', capacity: '200', image: '../assets/locations/commons.jpg', key: '1' },
-        { name: 'Knollcrest Dining Hall', currentState: 'Slightly busy', capacity: '150', image: '../assets/locations/knollcrest.jpg', key: '2' },
-        { name: 'Uppercrust', currentState: 'Busy', capacity: '75', key: '3' },
-        { name: 'Johnny\'s', currentState: 'Very busy', capacity: '100', image: '../assets/locations/johnnys.jpg', key: '4' },
-        { name: 'Peet\'s Coffee', currentState: 'Extremely busy', capacity: '30', image: '../assets/locations/peets.jpg', key: '5' },
+        { name: 'Commons Dining Hall', currentState: 'Not busy', maxCapacity: '200', image: '../assets/locations/commons.jpg', key: '1' },
+        { name: 'Knollcrest Dining Hall', currentState: 'Slightly busy', maxCapacity: '150', image: '../assets/locations/knollcrest.jpg', key: '2' },
+        { name: 'Uppercrust', currentState: 'Busy', maxCapacity: '75', key: '3' },
+        { name: 'Johnny\'s', currentState: 'Very busy', maxCapacity: '100', image: '../assets/locations/johnnys.jpg', key: '4' },
+        { name: 'Peet\'s Coffee', currentState: 'Extremely busy', maxCapacity: '30', image: '../assets/locations/peets.jpg', key: '5' },
     ]);
 
     // If conditional function to change the color of business based on the current state
@@ -46,7 +46,7 @@ export default function Home({ navigation }) {
     return (
         <View style={globalStyles.homeContainer}>
             <FlatList style={globalStyles.locationList} data={locations} renderItem={({ item }) => (
-                <TouchableOpacity onPress={() => navigation.navigate('LocationDetails', item)}>
+                <TouchableOpacity onPress={() => navigation.navigate('ReportPage', item)}>
                     <LocationCard>
                         <View style={globalStyles.titleContainer}>
                             <Text style={globalStyles.locationTitle}>{ item.name }</Text>
@@ -55,10 +55,11 @@ export default function Home({ navigation }) {
                             <Text style={globalStyles.statusTitle}>
                                 <Text style={getActivityStyle(item.currentState)}>{ item.currentState }</Text>
                             </Text>
-                            <Text style={globalStyles.headers}>Estimated Numbers:</Text>
-                            <Text style={globalStyles.numberText}>{ item.capacity }</Text>
-                            <Button title='Report Activity' color='#009933' onPress={() => navigation.navigate('reportPage', item)} style={globalStyles.reportButton}> Report
-                            </Button>
+                            <Text style={globalStyles.headers}>Current Capacity:</Text>
+                            {/* Replace "x" with data pulled from database */}
+                            <Text style={globalStyles.numberText}>x / { item.maxCapacity }</Text>
+                            {/* <Button title='Report Activity' color='#009933' onPress={() => navigation.navigate('ReportPage', item)} style={globalStyles.reportButton}> Report
+                            </Button> */}
                         </View>
                     </LocationCard>
                 </TouchableOpacity>
