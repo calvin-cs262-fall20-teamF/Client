@@ -194,13 +194,13 @@ export const globalStyles = StyleSheet.create({
    * About page fonts
    **************************/
   aboutTitle: {
-    fontFamily: 'Roboto, nunito-bold',
+    fontFamily: 'nunito-bold',
     fontSize: 23,
     fontWeight: 'bold',
     color: '#000',
   },
   subTitle: {
-    fontFamily: 'nunito',
+    fontFamily: 'nunito-bold',
     fontSize: 18,
     color: '#000',
   }
