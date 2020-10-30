@@ -200,7 +200,7 @@ export const globalStyles = StyleSheet.create({
     color: '#000',
   },
   subTitle: {
-    fontFamily: 'nunito',
+    fontFamily: 'nunito-bold',
     fontSize: 18,
     color: '#000',
   }
