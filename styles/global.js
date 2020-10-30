@@ -34,6 +34,7 @@ export const globalStyles = StyleSheet.create({
     shadowRadius: 2,
     marginHorizontal: 4,
     marginVertical: 6,
+
   },
   cardContent: {
     flexDirection: 'row',
@@ -43,14 +44,25 @@ export const globalStyles = StyleSheet.create({
     fontFamily: 'nunito-bold',
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',              // light gray
+    color: '#fff',              // light gray
+
+
   },
   titleContainer: {
     flex: 1,
-    borderRadius: 6,
     padding: 0,
     backgroundColor: '#fff',    // white
+    backgroundColor: 'transparent',
+    opacity: 0.9,
+    textAlign: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    opacity: 0.7,
+
+
   },
+
   statusContainer: {
     flex: 1,
     backgroundColor: '#fff',    // white
@@ -89,7 +101,7 @@ export const globalStyles = StyleSheet.create({
     color: '#8c8c8c',           // very light gray
     textAlign: 'center',
     marginTop: 20,
-},
+  },
   stateText: {
     fontFamily: 'nunito-regular',
     fontSize: 20
@@ -178,5 +190,19 @@ export const globalStyles = StyleSheet.create({
   submitButton: {
     backgroundColor: '#0066FF'
   },
+  /**************************
+   * About page fonts
+   **************************/
+  aboutTitle: {
+    fontFamily: 'Roboto, nunito-bold',
+    fontSize: 23,
+    fontWeight: 'bold',
+    color: '#000',
+  },
+  subTitle: {
+    fontFamily: 'nunito-bold',
+    fontSize: 18,
+    color: '#000',
+  }
 });
 

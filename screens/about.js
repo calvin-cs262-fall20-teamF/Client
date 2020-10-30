@@ -21,13 +21,13 @@ export default function About({ navigation }) {
     <ScrollView>
 
       <View style={styles.contentCard}>
-        <Text style={globalStyles.locationTitle}>FreeSpace{'\n'}</Text>
-        <Text>FreeSpace, our user-driven mobile app is tailored specifically towards Calvin University students in search of an available area on campus.</Text>
+        <Text style={globalStyles.aboutTitle}>FreeSpace{'\n'}</Text>
+        <Text style={globalStyles.subTitle} >FreeSpace, our user-driven mobile app is tailored specifically towards Calvin University students in search of an available area on campus.</Text>
 
       </View>
       <View style={styles.contentCard}>
-        <Text style={globalStyles.locationTitle} >Developers: {'\n'}</Text>
-        <Text>Esther Cha {'\n'}Zachary Chin{'\n'}Seongil (Leo) Kim{'\n'}YoungIn Kim{'\n'}Sinai Park{'\n'}Benjamin Westerhof</Text>
+        <Text style={globalStyles.aboutTitle} >Developers: {'\n'}</Text>
+        <Text style={globalStyles.subTitle} >Esther Cha {'\n'}Zachary Chin{'\n'}Seongil (Leo) Kim{'\n'}YoungIn Kim{'\n'}Sinai Park{'\n'}Benjamin Westerhof</Text>
       </View>
 
     </ScrollView >
