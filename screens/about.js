@@ -29,11 +29,6 @@ export default function About({ navigation }) {
         <Text style={globalStyles.locationTitle} >Developers: {'\n'}</Text>
         <Text>Esther Cha {'\n'}Zachary Chin{'\n'}Seongil (Leo) Kim{'\n'}YoungIn Kim{'\n'}Sinai Park{'\n'}Benjamin Westerhof</Text>
       </View>
-      <View style={styles.contentCard}>
-        <Text style={globalStyles.locationTitle} >Color Description {'\n'}</Text>
-        <Image style={styles.imageContent} source={require('../assets/colors.png')} />
-
-      </View>
 
     </ScrollView >
 
