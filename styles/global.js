@@ -124,7 +124,7 @@ export const globalStyles = StyleSheet.create({
    **************************/
   reportScreenContainer: {
     flex: 1,
-    backgroundColor: '#fff'     // white
+    backgroundColor: '#fff',     // white
   },
   statusList: {
     flex: 1,
@@ -141,7 +141,7 @@ export const globalStyles = StyleSheet.create({
     shadowRadius: 2,
     marginHorizontal: 4,
     marginVertical: 6,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   statusButtonSelected: {
     backgroundColor: '#aaa'     // light gray
@@ -173,19 +173,19 @@ export const globalStyles = StyleSheet.create({
    * Status button background colors
    **************************/
   notBusyBackground: {
-    backgroundColor: '#009933',
+    backgroundColor: '#807373',           //#BEBEBE
   },
   slightlyBusyBackground: {
-    backgroundColor: '#a5c932',           // light green
+    backgroundColor: '#806666',           // grayish red
   },
   busyBackground: {
-    backgroundColor: '#f8da07',           // yellow
+    backgroundColor: '#805A5A',           // less less red
   },
   veryBusyBackground: {
-    backgroundColor: '#ff9900',           // orange
+    backgroundColor: '#803333',           // less red
   },
   extremelyBusyBackground: {
-    backgroundColor: '#ff3300',           // red
+    backgroundColor: '#670C07',           // crimson red
   },
   submitButton: {
     backgroundColor: '#0066FF'
