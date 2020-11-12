@@ -46,7 +46,6 @@ export const globalStyles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',              // light gray
 
-
   },
   titleContainer: {
     flex: 1,
@@ -59,8 +58,6 @@ export const globalStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     opacity: 0.7,
-
-
   },
 
   statusContainer: {
@@ -130,10 +127,11 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
     padding: 5,
     backgroundColor: '#ddd',    // light gray
+    flexDirection: 'row'
   },
   // Status card element
-  statusButton: {
-    borderRadius: 100,
+  submitButton: {
+    borderRadius: 20,
     elevation: 3,
     shadowOffset: { width: 1, height: 1 },
     shadowColor: '#333',        // dark gray
@@ -143,6 +141,25 @@ export const globalStyles = StyleSheet.create({
     marginVertical: 6,
     alignItems: 'center'
   },
+  statusButton: {
+    borderRadius: 20,
+    height: 120,
+    width: 175,
+    elevation: 3,
+    shadowOffset: { width: 1, height: 1 },
+    shadowColor: '#333',        // dark gray
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
+    marginHorizontal: 4,
+    marginVertical: 6,
+    alignItems: 'center'
+  },
+  buttonContent: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+  },
   statusButtonSelected: {
     backgroundColor: '#aaa'     // light gray
   },
@@ -150,6 +167,11 @@ export const globalStyles = StyleSheet.create({
     fontFamily: 'nunito-bold',
     fontSize: 22,
     fontWeight: 'bold',
+  },
+  pieChart: {
+    height: 70,
+    width: 70,
+    backgroundColor: 'black'
   },
   /**************************
    * Status colors
@@ -187,7 +209,7 @@ export const globalStyles = StyleSheet.create({
   extremelyBusyBackground: {
     backgroundColor: '#ff3300',           // red
   },
-  submitButton: {
+  submitButtonBackground: {
     backgroundColor: '#0066FF'
   },
   /**************************

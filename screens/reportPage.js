@@ -8,7 +8,7 @@
 
 // import functions and libraries
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList, Image } from 'react-native';
 import { StackActions } from '@react-navigation/native';
 
 // import custom functions and styles
@@ -19,11 +19,11 @@ import { globalStyles } from '../styles/global';
 export default function ReportPage({ route, navigation }) {
     //makes a list for report buttons, the weight property is for the database
     const [buttonList, setButtons] = useState([
-        {name: 'NOT BUSY', textColor: {color: '#333'}, bgColor: globalStyles.notBusyBackground, isSelected: false, weight: '1', key: '1'},
-        {name: 'SLIGHTLY BUSY', textColor: {color: '#333'}, bgColor: globalStyles.slightlyBusyBackground, isSelected: false, weight: '2', key: '2'},
-        {name: 'BUSY', textColor: {color: '#333'}, bgColor: globalStyles.busyBackground, isSelected: false, weight: '3', key: '3'},
-        {name: 'VERY BUSY', textColor: {color: '#333'}, bgColor: globalStyles.veryBusyBackground, isSelected: false, weight: '4', key: '4'},
-        {name: 'EXTREMELY BUSY', textColor: {color: '#333'}, bgColor: globalStyles.extremelyBusyBackground, isSelected: false, weight: '5', key: '5'},
+        {name: 'NOT BUSY', textColor: {color: '#333'}, bgColor: globalStyles.notBusyBackground, image: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '1', key: '1'},
+        {name: 'SLIGHTLY BUSY', textColor: {color: '#333'}, bgColor: globalStyles.slightlyBusyBackground, image: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '2', key: '2'},
+        {name: 'BUSY', textColor: {color: '#333'}, bgColor: globalStyles.busyBackground, image: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '3', key: '3'},
+        {name: 'VERY BUSY', textColor: {color: '#333'}, bgColor: globalStyles.veryBusyBackground, image: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '4', key: '4'},
+        {name: 'EXTREMELY BUSY', textColor: {color: '#333'}, bgColor: globalStyles.extremelyBusyBackground, image: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '5', key: '5'},
     ]);
 
     // stores the active button to allow only one button as "grayed out"
@@ -55,16 +55,24 @@ export default function ReportPage({ route, navigation }) {
         setSubmitBlocker(false);
     };
 
+    const numCols = 2;
 
     return (
     <View style={globalStyles.reportScreenContainer}>
         <Text style={globalStyles.locationText}>{ route.params.name } </Text>
 
         {/* Report buttons */}
-        <FlatList style={globalStyles.statusList} data={buttonList} renderItem={({ item }) => (
+        <FlatList key={numCols} 
+            style={globalStyles.statusList} 
+            data={buttonList} 
+            numColumns={numCols} 
+            scrollEnabled={false} 
+            renderItem={({ item }) => (
+
             <TouchableOpacity>
                 <StatusButton name={item.name} buttonColor={item.bgColor} buttonID={item.key} selected={item.isSelected} reportCallback={statusButtonCallback}>
                     <Text style={[globalStyles.statusText, item.textColor]}>{ item.name }</Text>
+                    <Image source={item.image} imageStyle={{ borderRadius: 25 }} style={globalStyles.pieChart} />
                 </StatusButton>
             </TouchableOpacity>
         )}>
@@ -76,7 +84,7 @@ export default function ReportPage({ route, navigation }) {
                 <SubmitButton 
                     name="SUBMIT" 
                     isSelected={true} 
-                    buttonColor={[submitBlocker? globalStyles.statusButtonSelected : globalStyles.submitButton]}
+                    buttonColor={[submitBlocker? globalStyles.statusButtonSelected : globalStyles.submitButtonBackground]}
                     invalid={submitBlocker}
                     >
                     <Text style={[globalStyles.statusText, {color: '#fff'}]}>SUBMIT</Text>

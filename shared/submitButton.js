@@ -20,7 +20,7 @@ export default function SubmitButton(props) {
             onPress={pressHandler}
             style={[
                 props.buttonColor,
-                globalStyles.statusButton,
+                globalStyles.submitButton,
             ]}
         >
             <View style={globalStyles.cardContent}>
