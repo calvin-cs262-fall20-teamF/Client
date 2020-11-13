@@ -38,7 +38,6 @@ export const globalStyles = StyleSheet.create({
     shadowRadius: 2,
     marginHorizontal: 4,
     marginVertical: 6,
-
   },
   cardContent: {
     flexDirection: 'row',
@@ -49,14 +48,12 @@ export const globalStyles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#fff',              // light gray
-
   },
   titleContainer: {
     flex: 1,
     padding: 0,
     backgroundColor: '#fff',    // white
     backgroundColor: 'transparent',
-    opacity: 0.9,
     textAlign: 'center',
     flexDirection: 'row',
     alignItems: 'center',
