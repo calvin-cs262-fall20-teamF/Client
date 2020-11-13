@@ -144,7 +144,9 @@ export const globalStyles = StyleSheet.create({
     alignItems: 'center',
   },
   statusButtonSelected: {
-    backgroundColor: '#aaa'     // light gray
+    backgroundColor: '#aaa',     // light gray
+    borderWidth: 5,
+    borderColor: '#800000'
   },
   statusText: {
     fontFamily: 'nunito-bold',
@@ -173,7 +175,7 @@ export const globalStyles = StyleSheet.create({
    * Status button background colors
    **************************/
   notBusyBackground: {
-    backgroundColor: '#807373',           //#BEBEBE
+    backgroundColor: '#BEBEBE',           //light gray
   },
   slightlyBusyBackground: {
     backgroundColor: '#806666',           // grayish red
