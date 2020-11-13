@@ -93,7 +93,7 @@ export default function ReportPage({ route, navigation }) {
                 <SubmitButton 
                     name="SUBMIT" 
                     isSelected={true} 
-                    buttonColor={[submitBlocker? globalStyles.statusButtonSelected : globalStyles.submitButtonBackground]}
+                    buttonColor={[submitBlocker? globalStyles.submitButtonDisabled : globalStyles.submitButtonBackground]}
                     invalid={submitBlocker}
                     >
                     <Text style={globalStyles.submitText}>SUBMIT</Text>
