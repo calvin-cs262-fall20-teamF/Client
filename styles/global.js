@@ -205,6 +205,11 @@ export const globalStyles = StyleSheet.create({
     fontFamily: 'nunito-bold',
     fontSize: 18,
     color: '#000',
+  },
+
+  icon: {
+    width: 25,
+    height: 25
   }
 });
 

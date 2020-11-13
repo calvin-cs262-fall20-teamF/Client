@@ -10,6 +10,15 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native';
 import { StackActions } from '@react-navigation/native';
+import { Icon, InlineIcon } from '@iconify/react';
+import circleSlice1 from '@iconify-icons/mdi/circle-slice-1';
+import circleSlice3 from '@iconify-icons/mdi/circle-slice-3';
+import circleSlice4 from '@iconify-icons/mdi/circle-slice-4';
+import circleSlice6 from '@iconify-icons/mdi/circle-slice-6';
+import circleSlice7 from '@iconify-icons/mdi/circle-slice-7';
+
+
+
 
 // import custom functions and styles
 import StatusButton from '../shared/statusButton';
@@ -19,11 +28,11 @@ import { globalStyles } from '../styles/global';
 export default function ReportPage({ route, navigation }) {
     //makes a list for report buttons, the weight property is for the database
     const [buttonList, setButtons] = useState([
-        { name: 'NOT BUSY', textColor: { color: '#fff' }, bgColor: globalStyles.notBusyBackground, isSelected: false, weight: '1', key: '1' },
-        { name: 'SLIGHTLY BUSY', textColor: { color: '#fff' }, bgColor: globalStyles.slightlyBusyBackground, isSelected: false, weight: '2', key: '2' },
-        { name: 'BUSY', textColor: { color: '#fff' }, bgColor: globalStyles.busyBackground, isSelected: false, weight: '3', key: '3' },
-        { name: 'VERY BUSY', textColor: { color: '#fff' }, bgColor: globalStyles.veryBusyBackground, isSelected: false, weight: '4', key: '4' },
-        { name: 'EXTREMELY BUSY', textColor: { color: '#fff' }, bgColor: globalStyles.extremelyBusyBackground, isSelected: false, weight: '5', key: '5' },
+        { name: 'NOT BUSY', textColor: { color: '#fff' }, bgColor: globalStyles.notBusyBackground, isSelected: false, weight: '1', icon: circleSlice1, key: '1' },
+        { name: 'SLIGHTLY BUSY', textColor: { color: '#fff' }, bgColor: globalStyles.slightlyBusyBackground, isSelected: false, weight: '2', icon: circleSlice3, key: '2' },
+        { name: 'BUSY', textColor: { color: '#fff' }, bgColor: globalStyles.busyBackground, isSelected: false, weight: '3', icon: circleSlice4, key: '3' },
+        { name: 'VERY BUSY', textColor: { color: '#fff' }, bgColor: globalStyles.veryBusyBackground, isSelected: false, weight: '4', icon: circleSlice6, key: '4' },
+        { name: 'EXTREMELY BUSY', textColor: { color: '#fff' }, bgColor: globalStyles.extremelyBusyBackground, isSelected: false, weight: '5', icon: circleSlice7, key: '5' },
     ]);
 
     // stores the active button to allow only one button as "grayed out"
@@ -53,6 +62,7 @@ export default function ReportPage({ route, navigation }) {
 
         //sets the SubmitBlocker hook to false
         setSubmitBlocker(false);
+
     };
 
 
@@ -65,6 +75,7 @@ export default function ReportPage({ route, navigation }) {
                 <TouchableOpacity>
                     <StatusButton name={item.name} buttonColor={item.bgColor} buttonID={item.key} selected={item.isSelected} reportCallback={statusButtonCallback}>
                         <Text style={[globalStyles.statusText, item.textColor]}>{item.name}</Text>
+                        <Icon icon={item.icon} width={26} height={26} color="white " hAlign="right" />
                     </StatusButton>
                 </TouchableOpacity>
             )}>
@@ -84,7 +95,7 @@ export default function ReportPage({ route, navigation }) {
                 </TouchableOpacity>
             </View>
 
-        </View>
+        </View >
 
     )
 }
