@@ -8,7 +8,11 @@
  ***************************************************************/
 
 // import functions and libraries
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions} from 'react-native';
+
+// get application window dimensions
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 export const globalStyles = StyleSheet.create({
   /**************************
@@ -86,11 +90,6 @@ export const globalStyles = StyleSheet.create({
     width: 300,
     height: 200,
   },
-  locationText: {
-    fontFamily: 'nunito-bold',
-    fontSize: 25,
-    textAlign: 'center'
-  },
   headers: {
     fontFamily: 'nunito-bold',
     fontSize: 15,
@@ -123,13 +122,32 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff'     // white
   },
+  locationText: {
+    fontFamily: 'nunito-bold',
+    fontSize: 25,
+    // textAlign: 'center',
+  },
+  locationTextContainer: {
+    flex: 0.4,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+  },
+  statusListContainer: {
+    flex: 5,
+    backgroundColor: '#ddd',    // light gray
+    alignItems: 'center',
+  },
+  submitContainer: {
+    flex: 1,
+    backgroundColor: '#fff',   // white
+  },
   statusList: {
     flex: 1,
-    padding: 5,
+    // padding: 5,
     backgroundColor: '#ddd',    // light gray
-    flexDirection: 'row'
   },
-  // Status card element
+  // Submit button component
   submitButton: {
     borderRadius: 20,
     elevation: 3,
@@ -137,14 +155,15 @@ export const globalStyles = StyleSheet.create({
     shadowColor: '#333',        // dark gray
     shadowOpacity: 0.3,
     shadowRadius: 2,
-    marginHorizontal: 4,
+    marginHorizontal: 6,
     marginVertical: 6,
     alignItems: 'center'
   },
+  // Status button component
   statusButton: {
     borderRadius: 20,
-    height: 120,
-    width: 175,
+    height: windowHeight/5,
+    width: windowWidth/2.1,
     elevation: 3,
     shadowOffset: { width: 1, height: 1 },
     shadowColor: '#333',        // dark gray
@@ -152,26 +171,50 @@ export const globalStyles = StyleSheet.create({
     shadowRadius: 2,
     marginHorizontal: 4,
     marginVertical: 6,
-    alignItems: 'center'
   },
-  buttonContent: {
+  // Stuff within status button
+  statusButtonContent: {
+    borderRadius: 20,
+    marginHorizontal: 5,
+    marginVertical: 5,
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
   },
+  // Color for a selected status button
   statusButtonSelected: {
     backgroundColor: '#aaa'     // light gray
   },
+  // Container for text within status buttons
+  reportTextContainer: {
+    flex: 0.5,
+    alignContent: 'center',
+    justifyContent: 'center',
+  },
+  // Container for pie chart within status buttons
+  reportImageContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  // Text within status buttons
   statusText: {
+    fontFamily: 'nunito-bold',
+    fontSize: 19,
+    fontWeight: 'bold',
+    color: 'black',
+    textAlign: 'center'
+  },
+  submitText: {
     fontFamily: 'nunito-bold',
     fontSize: 22,
     fontWeight: 'bold',
+    color: '#fff',            // white
+    textAlign: 'center'
   },
+  // Pie chart within status buttons
   pieChart: {
     height: 70,
     width: 70,
-    backgroundColor: 'black'
   },
   /**************************
    * Status colors

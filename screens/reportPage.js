@@ -19,11 +19,11 @@ import { globalStyles } from '../styles/global';
 export default function ReportPage({ route, navigation }) {
     //makes a list for report buttons, the weight property is for the database
     const [buttonList, setButtons] = useState([
-        {name: 'NOT BUSY', textColor: {color: '#333'}, bgColor: globalStyles.notBusyBackground, image: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '1', key: '1'},
-        {name: 'SLIGHTLY BUSY', textColor: {color: '#333'}, bgColor: globalStyles.slightlyBusyBackground, image: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '2', key: '2'},
-        {name: 'BUSY', textColor: {color: '#333'}, bgColor: globalStyles.busyBackground, image: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '3', key: '3'},
-        {name: 'VERY BUSY', textColor: {color: '#333'}, bgColor: globalStyles.veryBusyBackground, image: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '4', key: '4'},
-        {name: 'EXTREMELY BUSY', textColor: {color: '#333'}, bgColor: globalStyles.extremelyBusyBackground, image: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '5', key: '5'},
+        {name: 'NOT BUSY', bgColor: globalStyles.notBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '1', key: '1'},
+        {name: 'SLIGHTLY BUSY', bgColor: globalStyles.slightlyBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '2', key: '2'},
+        {name: 'BUSY', bgColor: globalStyles.busyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '3', key: '3'},
+        {name: 'VERY BUSY', bgColor: globalStyles.veryBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '4', key: '4'},
+        {name: 'EXTREMELY BUSY', bgColor: globalStyles.extremelyBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '5', key: '5'},
     ]);
 
     // stores the active button to allow only one button as "grayed out"
@@ -59,27 +59,36 @@ export default function ReportPage({ route, navigation }) {
 
     return (
     <View style={globalStyles.reportScreenContainer}>
-        <Text style={globalStyles.locationText}>{ route.params.name } </Text>
+        {/* Location name */}
+        <View style={globalStyles.locationTextContainer}>
+            <Text style={globalStyles.locationText}>{ route.params.name } </Text>
+        </View>
 
-        {/* Report buttons */}
-        <FlatList key={numCols} 
-            style={globalStyles.statusList} 
-            data={buttonList} 
-            numColumns={numCols} 
-            scrollEnabled={false} 
-            renderItem={({ item }) => (
+        {/* Report button list */}
+        <View style={globalStyles.statusListContainer}>
+            <FlatList key={numCols} 
+                style={globalStyles.statusList} 
+                data={buttonList} 
+                numColumns={numCols} 
+                scrollEnabled={false} 
+                renderItem={({ item }) => (
 
-            <TouchableOpacity>
-                <StatusButton name={item.name} buttonColor={item.bgColor} buttonID={item.key} selected={item.isSelected} reportCallback={statusButtonCallback}>
-                    <Text style={[globalStyles.statusText, item.textColor]}>{ item.name }</Text>
-                    <Image source={item.image} imageStyle={{ borderRadius: 25 }} style={globalStyles.pieChart} />
-                </StatusButton>
-            </TouchableOpacity>
-        )}>
-        </FlatList>
+                <TouchableOpacity>
+                    <StatusButton name={item.name} buttonColor={item.bgColor} buttonID={item.key} selected={item.isSelected} reportCallback={statusButtonCallback}>
+                        <View style={globalStyles.reportTextContainer}>
+                            <Text style={globalStyles.statusText}>{ item.name }</Text>
+                        </View>
+                        <View style={globalStyles.reportImageContainer}>
+                            <Image source={item.chart} style={globalStyles.pieChart} />
+                        </View>
+                    </StatusButton>
+                </TouchableOpacity>
+            )}>
+            </FlatList>
+        </View>
 
         {/* Submit button */}
-        <View>
+        <View style={globalStyles.submitContainer}>
             <TouchableOpacity onPress={() => navigation.dispatch(StackActions.popToTop())} disabled={submitBlocker}>
                 <SubmitButton 
                     name="SUBMIT" 
@@ -87,7 +96,7 @@ export default function ReportPage({ route, navigation }) {
                     buttonColor={[submitBlocker? globalStyles.statusButtonSelected : globalStyles.submitButtonBackground]}
                     invalid={submitBlocker}
                     >
-                    <Text style={[globalStyles.statusText, {color: '#fff'}]}>SUBMIT</Text>
+                    <Text style={globalStyles.submitText}>SUBMIT</Text>
                 </SubmitButton>
             </TouchableOpacity>
         </View>

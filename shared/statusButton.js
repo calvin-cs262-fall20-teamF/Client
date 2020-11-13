@@ -20,7 +20,7 @@ export default function StatusButton(props) {
                 props.selected && globalStyles.statusButtonSelected
             ]}
         >
-            <View style={globalStyles.buttonContent}>
+            <View style={globalStyles.statusButtonContent}>
                 {props.children}
             </View>
         </TouchableOpacity>
