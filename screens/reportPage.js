@@ -19,11 +19,11 @@ import { globalStyles } from '../styles/global';
 export default function ReportPage({ route, navigation }) {
     //makes a list for report buttons, the weight property is for the database
     const [buttonList, setButtons] = useState([
-        {name: 'NOT BUSY', bgColor: globalStyles.notBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '1', key: '1'},
-        {name: 'SLIGHTLY BUSY', bgColor: globalStyles.slightlyBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '2', key: '2'},
-        {name: 'BUSY', bgColor: globalStyles.busyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '3', key: '3'},
-        {name: 'VERY BUSY', bgColor: globalStyles.veryBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '4', key: '4'},
-        {name: 'EXTREMELY BUSY', bgColor: globalStyles.extremelyBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '5', key: '5'},
+        { name: 'NOT BUSY', bgColor: globalStyles.notBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '1', key: '1' },
+        { name: 'SLIGHTLY BUSY', bgColor: globalStyles.slightlyBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '2', key: '2' },
+        { name: 'BUSY', bgColor: globalStyles.busyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '3', key: '3' },
+        { name: 'VERY BUSY', bgColor: globalStyles.veryBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '4', key: '4' },
+        { name: 'EXTREMELY BUSY', bgColor: globalStyles.extremelyBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '5', key: '5' },
     ]);
 
     // stores the active button to allow only one button as "grayed out"
@@ -39,14 +39,14 @@ export default function ReportPage({ route, navigation }) {
         // create copy of active and change isSelected of target button to 'true'
         let newButtons = [...buttonList];
         // check if one button has already been selected
-        for(var i = 0; i < newButtons.length; i++){
-            if(newButtons[i].isSelected){
+        for (var i = 0; i < newButtons.length; i++) {
+            if (newButtons[i].isSelected) {
                 // change isSelected of previously selected button to 'false'
                 newButtons[i].isSelected = false;
             }
         }
         // change isSelected of target button to 'true'
-        newButtons[index] = {...newButtons[index], isSelected: !newButtons[index].isSelected};
+        newButtons[index] = { ...newButtons[index], isSelected: !newButtons[index].isSelected };
 
         // update buttonList
         setButtons(newButtons);
@@ -58,49 +58,50 @@ export default function ReportPage({ route, navigation }) {
     const numCols = 2;
 
     return (
-    <View style={globalStyles.reportScreenContainer}>
-        {/* Location name */}
-        <View style={globalStyles.locationTextContainer}>
-            <Text style={globalStyles.locationText}>{ route.params.name } </Text>
-        </View>
+        <View style={globalStyles.reportScreenContainer}>
+            {/* Location name */}
+            <View style={globalStyles.locationTextContainer}>
+                <Text style={globalStyles.locationText}>{route.params.name} </Text>
+            </View>
 
-        {/* Report button list */}
-        <View style={globalStyles.statusListContainer}>
-            <FlatList key={numCols} 
-                style={globalStyles.statusList} 
-                data={buttonList} 
-                numColumns={numCols} 
-                scrollEnabled={false} 
-                renderItem={({ item }) => (
+            {/* Report button list */}
+            <View style={globalStyles.statusListContainer}>
+                <FlatList key={numCols}
+                    style={globalStyles.statusList}
+                    data={buttonList}
+                    numColumns={numCols}
+                    scrollEnabled={false}
+                    renderItem={({ item }) => (
 
-                <TouchableOpacity>
-                    <StatusButton name={item.name} buttonColor={item.bgColor} buttonID={item.key} selected={item.isSelected} reportCallback={statusButtonCallback}>
-                        <View style={globalStyles.reportTextContainer}>
-                            <Text style={globalStyles.statusText}>{ item.name }</Text>
-                        </View>
-                        <View style={globalStyles.reportImageContainer}>
-                            <Image source={item.chart} style={globalStyles.pieChart} />
-                        </View>
-                    </StatusButton>
-                </TouchableOpacity>
-            )}>
-            </FlatList>
-        </View>
+                        <TouchableOpacity>
+                            <StatusButton name={item.name} buttonColor={item.bgColor} buttonID={item.key} selected={item.isSelected} reportCallback={statusButtonCallback}>
+                                <View style={globalStyles.reportTextContainer}>
+                                    <Text style={globalStyles.statusText}>{item.name}</Text>
+                                </View>
+                                <View style={globalStyles.reportImageContainer}>
+                                    <Image source={item.chart} style={globalStyles.pieChart} />
+                                </View>
+                            </StatusButton>
+                        </TouchableOpacity>
+                    )}>
+                </FlatList>
+            </View>
 
-        {/* Submit button */}
-        <View style={globalStyles.submitContainer}>
-            <TouchableOpacity onPress={() => navigation.dispatch(StackActions.popToTop())} disabled={submitBlocker}>
-                <SubmitButton 
-                    name="SUBMIT" 
-                    isSelected={true} 
-                    buttonColor={[submitBlocker? globalStyles.submitButtonDisabled : globalStyles.submitButtonBackground]}
-                    invalid={submitBlocker}
+            {/* Submit button */}
+            <View style={globalStyles.submitContainer}>
+                <TouchableOpacity onPress={() => navigation.dispatch(StackActions.popToTop())} disabled={submitBlocker}>
+                    <SubmitButton
+                        name="SUBMIT"
+                        isSelected={true}
+                        buttonColor={[submitBlocker ? globalStyles.submitButtonDisabled : globalStyles.submitButtonBackground]}
+                        invalid={submitBlocker}
                     >
-                    <Text style={globalStyles.submitText}>SUBMIT</Text>
-                </SubmitButton>
-            </TouchableOpacity>
+                        <Text style={globalStyles.submitText}>SUBMIT</Text>
+                    </SubmitButton>
+                </TouchableOpacity>
+            </View>
+
         </View>
 
-    </View>
-
-    )}
+    )
+}
