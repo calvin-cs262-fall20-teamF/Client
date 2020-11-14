@@ -8,22 +8,7 @@ View the Freespace project details [here](https://github.com/calvin-cs262-fall20
 2. Run `npm install` to install required packages.
 3. Run `expo start` to start the server to run the application.
 
-## Packages/dependencies
-**npm:**
-- @react-navigation/native
-- @react-navigation/stack
-- @react-navigation/bottom-tabs
-
-**expo:**
-- react-native-gesture-handler
-- react-native-reanimated
-- react-native-screens
-- react-native-safe-area-context
-- @react-native-community/masked-view
-- @react-modal-image
-
-
-#### Other Freespace repos:
+### Other Freespace Repos
 - [Project Materials](https://github.com/calvin-cs262-fall2020-Freespace/Project)
 - [Data Service](https://github.com/calvin-cs262-fall2020-Freespace/Service)
 
