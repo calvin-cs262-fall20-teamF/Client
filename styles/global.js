@@ -8,11 +8,11 @@
  ***************************************************************/
 
 // import functions and libraries
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions } from "react-native";
 
 // get application window dimensions
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 export const globalStyles = StyleSheet.create({
   /**************************
@@ -20,59 +20,59 @@ export const globalStyles = StyleSheet.create({
    **************************/
   homeContainer: {
     flex: 1,
-    backgroundColor: '#fff'     // white
+    backgroundColor: "#fff", // white
   },
   locationList: {
     flex: 1,
     padding: 5,
-    backgroundColor: '#ddd'     // light gray
+    backgroundColor: "#ddd", // light gray
   },
   // Location card element
   locationCard: {
     borderRadius: 6,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     elevation: 3,
     shadowOffset: { width: 1, height: 1 },
-    shadowColor: '#333',        // dark gray
+    shadowColor: "#333", // dark gray
     shadowOpacity: 0.3,
     shadowRadius: 2,
     marginHorizontal: 4,
     marginVertical: 6,
   },
   cardContent: {
-    flexDirection: 'row',
+    flexDirection: "row",
     padding: 20,
   },
   locationTitle: {
-    fontFamily: 'nunito-bold',
+    fontFamily: "nunito-bold",
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#fff',              // light gray
+    fontWeight: "bold",
+    color: "#fff", // white
+    textAlign: "center",
   },
   titleContainer: {
     flex: 1,
     padding: 0,
-    backgroundColor: '#fff',    // white
-    backgroundColor: 'transparent',
-    textAlign: 'center',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    opacity: 0.7,
+    textAlign: "center",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    opacity: 0.8,
+    backgroundColor: "#fff",
   },
 
   statusContainer: {
     flex: 1,
-    backgroundColor: '#fff',    // white
-    alignItems: 'center',
-    justifyContent: 'center'
+    backgroundColor: "#fff", // white
+    alignItems: "center",
+    justifyContent: "center",
   },
   statusTitle: {
-    fontFamily: 'nunito-bold',
+    fontFamily: "nunito-bold",
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#333',              // light gray
-    textAlign: 'center'
+    fontWeight: "bold",
+    color: "#333", // light gray
+    textAlign: "center",
   },
   /**************************
    * Location screen styles
@@ -80,33 +80,33 @@ export const globalStyles = StyleSheet.create({
   locationScreenContainer: {
     flex: 1,
     padding: 10,
-    alignItems: 'center',
-    backgroundColor: '#fff'     // white
+    alignItems: "center",
+    backgroundColor: "#fff", // white
   },
   locationImage: {
     width: 300,
     height: 200,
   },
   headers: {
-    fontFamily: 'nunito-bold',
+    fontFamily: "nunito-bold",
     fontSize: 15,
-    fontWeight: 'bold',
-    color: '#8c8c8c',           // very light gray
-    textAlign: 'center',
+    fontWeight: "bold",
+    color: "#8c8c8c", // very light gray
+    textAlign: "center",
     marginTop: 20,
   },
   stateText: {
-    fontFamily: 'nunito-regular',
-    fontSize: 20
+    fontFamily: "nunito-regular",
+    fontSize: 20,
   },
   numberText: {
-    fontFamily: 'nunito-bold',
+    fontFamily: "nunito-bold",
     fontSize: 25,
     marginBottom: 20,
-    color: '#999900',           // gold
+    color: "#999900", // gold
   },
   activityTitle: {
-    fontFamily: 'nunito-bold',
+    fontFamily: "nunito-bold",
     fontSize: 25,
   },
   reportButton: {
@@ -117,44 +117,44 @@ export const globalStyles = StyleSheet.create({
    **************************/
   reportScreenContainer: {
     flex: 1,
-    backgroundColor: '#fff'     // white
+    backgroundColor: "#fff", // white
   },
   locationText: {
-    fontFamily: 'nunito-bold',
+    fontFamily: "nunito-bold",
     fontSize: 25,
     // textAlign: 'center',
   },
   locationTextContainer: {
     flex: 0.4,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
   },
   statusListContainer: {
     flex: 5,
-    backgroundColor: '#ddd',    // light gray
-    alignItems: 'center',
+    backgroundColor: "#ddd", // light gray
+    alignItems: "center",
   },
   submitContainer: {
     flex: 1,
-    backgroundColor: '#fff',   // white
+    backgroundColor: "#fff", // white
   },
   statusList: {
     flex: 1,
     // padding: 5,
-    backgroundColor: '#ddd',    // light gray
+    backgroundColor: "#ddd", // light gray
   },
   // Submit button component
   submitButton: {
     borderRadius: 20,
     elevation: 3,
     shadowOffset: { width: 1, height: 1 },
-    shadowColor: '#333',        // dark gray
+    shadowColor: "#333", // dark gray
     shadowOpacity: 0.3,
     shadowRadius: 2,
     marginHorizontal: 6,
     marginVertical: 6,
-    alignItems: 'center'
+    alignItems: "center",
   },
   // Status button component
   statusButton: {
@@ -163,7 +163,7 @@ export const globalStyles = StyleSheet.create({
     width: windowWidth / 2.1,
     elevation: 3,
     shadowOffset: { width: 1, height: 1 },
-    shadowColor: '#333',        // dark gray
+    shadowColor: "#333", // dark gray
     shadowOpacity: 0.3,
     shadowRadius: 2,
     marginHorizontal: 4,
@@ -175,100 +175,99 @@ export const globalStyles = StyleSheet.create({
     marginHorizontal: 5,
     marginVertical: 5,
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
   },
   // Color for a selected status button
   statusButtonSelected: {
-    backgroundColor: '#F3CD00'     // light gray
+    backgroundColor: "#F3CD00", // light gray
   },
   // Color for a disabled submit button
   submitButtonDisabled: {
-    backgroundColor: '#aaa'       // Calvin gold
+    backgroundColor: "#aaa", // Calvin gold
   },
   // Container for text within status buttons
   reportTextContainer: {
     flex: 0.5,
-    alignContent: 'center',
-    justifyContent: 'center',
+    alignContent: "center",
+    justifyContent: "center",
   },
   // Container for pie chart within status buttons
   reportImageContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   // Text within status buttons
   statusText: {
-    fontFamily: 'nunito-bold',
+    fontFamily: "nunito-bold",
     fontSize: 19,
-    fontWeight: 'bold',
-    color: '#fff',
-    textAlign: 'center'
+    fontWeight: "bold",
+    color: "#fff",
+    textAlign: "center",
   },
   submitText: {
-    fontFamily: 'nunito-bold',
+    fontFamily: "nunito-bold",
     fontSize: 22,
-    fontWeight: 'bold',
-    color: '#fff',            // white
-    textAlign: 'center'
+    fontWeight: "bold",
+    color: "#fff", // white
+    textAlign: "center",
   },
   // Pie chart within status buttons
   pieChart: {
-    height: 70,
-    width: 70,
+    height: 65,
+    width: 65,
   },
   /**************************
    * Status colors
    **************************/
   notBusy: {
-    color: '#009933',           // dark green
+    color: "#009933", // dark green
   },
   slightlyBusy: {
-    color: '#a5c932',           // light green
+    color: "#a5c932", // light green
   },
   busy: {
-    color: '#f8da07',           // yellow
+    color: "#f8da07", // yellow
   },
   veryBusy: {
-    color: '#ff9900',           // orange
+    color: "#ff9900", // orange
   },
   extremelyBusy: {
-    color: '#ff3300',           // red
+    color: "#ff3300", // red
   },
   /**************************
    * Status button background colors
    **************************/
   notBusyBackground: {
-    backgroundColor: '#BEBEBE',           // light gray
+    backgroundColor: "#BEBEBE", // light gray
   },
   slightlyBusyBackground: {
-    backgroundColor: '#806666',           // grayish-brown-red
+    backgroundColor: "#806666", // grayish-brown-red
   },
   busyBackground: {
-    backgroundColor: '#805A5A',           // brown-red
+    backgroundColor: "#805A5A", // brown-red
   },
   veryBusyBackground: {
-    backgroundColor: '#803333',           // less red
+    backgroundColor: "#803333", // less red
   },
   extremelyBusyBackground: {
-    backgroundColor: '#670C07',           // crimson red
+    backgroundColor: "#670C07", // crimson red
   },
   submitButtonBackground: {
-    backgroundColor: '#0066FF'
+    backgroundColor: "#0066FF",
   },
   /**************************
    * About page fonts
    **************************/
   aboutTitle: {
-    fontFamily: 'nunito-bold',
+    fontFamily: "nunito-bold",
     fontSize: 23,
-    fontWeight: 'bold',
-    color: '#000',
+    fontWeight: "bold",
+    color: "#000",
   },
   subTitle: {
-    fontFamily: 'nunito-bold',
+    fontFamily: "nunito-bold",
     fontSize: 18,
-    color: '#000',
-  }
+    color: "#000",
+  },
 });
-

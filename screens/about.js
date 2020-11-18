@@ -10,7 +10,7 @@
 
 // import functions and libraries
 import React from "react";
-import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
+import { StyleSheet, View, Text, ScrollView } from "react-native";
 import ImageOverlay from "react-native-image-overlay";
 import Background from "../assets/background.jpg";
 
@@ -26,7 +26,6 @@ export default function About({ navigation }) {
         overlayAlpha={0.3}
         blurRadius={0.8}
       ></ImageOverlay>
-
       <View style={styles.contentCard}>
         <Text style={styles.appTitle}>FreeSpace{"\n"}</Text>
         <Text style={styles.vision}>
@@ -49,11 +48,6 @@ export default function About({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  devCard: {
-    position: "absolute", // child
-    bottom: -250, // position where you want
-    left: 50,
-  },
   // Location card element
   contentCard: {
     borderRadius: 10,
@@ -67,16 +61,13 @@ const styles = StyleSheet.create({
     marginVertical: 6,
     width: 400,
     padding: 20,
-    position: "absolute", // child
-    bottom: -190, // position where you want
-    left: 45,
-    justifyContent: "center",
-    alignItems: "center",
+    position: "absolute",
+    alignSelf: "center",
+    bottom: "-80%",
   },
   devCard: {
     borderRadius: 10,
     backgroundColor: "rgba(0,0,0,0.4)",
-
     elevation: 3,
     shadowOffset: { width: 1, height: 1 },
     shadowColor: "#333", // dark gray
@@ -84,12 +75,11 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     marginHorizontal: 4,
     marginVertical: 6,
-    width: 400,
+    width: 300,
     padding: 20,
-    position: "absolute", // child
-    bottom: -380, // position where you want
-    left: 45,
-    justifyContent: "center",
+    position: "absolute",
+    alignSelf: "center",
+    bottom: "-158%",
     alignItems: "center",
   },
   imageContent: {
@@ -99,18 +89,22 @@ const styles = StyleSheet.create({
   },
   appTitle: {
     fontFamily: "nunito-bold",
-    fontSize: 38,
-    fontWeight: 500,
+    textShadowOffset: { width: 4, height: 4 },
+    textShadowRadius: 3,
+    textShadowColor: "#000",
+    fontSize: 40,
+    fontWeight: "bold",
     color: "#fff",
-    letterSpacing: 3.9,
-    position: "absolute", // child
-    bottom: 240, // position where you want
-    justifyContent: "center",
+    letterSpacing: 5,
+    position: "absolute",
+    alignSelf: "center",
+    bottom: "86%",
   },
   vision: {
     fontFamily: "nunito-bold",
     fontSize: 18,
     color: "#fff",
+    textAlign: "justify",
   },
   developers: {
     fontFamily: "nunito-bold",
