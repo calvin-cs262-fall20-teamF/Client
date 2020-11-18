@@ -1,8 +1,8 @@
 /***************************************************************
  * reportPage.js
- * 
+ *
  * Last modified: October 16, 2020
- * 
+ *
  * reportPage.js gives users the ability to submit a report on their location
  ***************************************************************/
 
@@ -19,11 +19,11 @@ import { globalStyles } from '../styles/global';
 export default function ReportPage({ route, navigation }) {
     //makes a list for report buttons, the weight property is for the database
     const [buttonList, setButtons] = useState([
-        { name: 'NOT BUSY', bgColor: globalStyles.notBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '1', key: '1' },
-        { name: 'SLIGHTLY BUSY', bgColor: globalStyles.slightlyBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '2', key: '2' },
-        { name: 'BUSY', bgColor: globalStyles.busyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '3', key: '3' },
-        { name: 'VERY BUSY', bgColor: globalStyles.veryBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '4', key: '4' },
-        { name: 'EXTREMELY BUSY', bgColor: globalStyles.extremelyBusyBackground, chart: require('../assets/pie-charts/placeholder.png'), isSelected: false, weight: '5', key: '5' },
+        { name: 'NOT BUSY', bgColor: globalStyles.notBusyBackground, chart: require('../assets/pie-charts/1.png'), isSelected: false, weight: '1', key: '1' },
+        { name: 'SLIGHTLY BUSY', bgColor: globalStyles.slightlyBusyBackground, chart: require('../assets/pie-charts/2.png'), isSelected: false, weight: '2', key: '2' },
+        { name: 'BUSY', bgColor: globalStyles.busyBackground, chart: require('../assets/pie-charts/3.png'), isSelected: false, weight: '3', key: '3' },
+        { name: 'VERY BUSY', bgColor: globalStyles.veryBusyBackground, chart: require('../assets/pie-charts/4.png'), isSelected: false, weight: '4', key: '4' },
+        { name: 'EXTREMELY BUSY', bgColor: globalStyles.extremelyBusyBackground, chart: require('../assets/pie-charts/5.png'), isSelected: false, weight: '5', key: '5' },
     ]);
 
     // stores the active button to allow only one button as "grayed out"
