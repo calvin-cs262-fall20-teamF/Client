@@ -49,7 +49,7 @@ export default function Home({ navigation }) {
     // }
 
     useEffect(() => {
-        fetch('http://calvinfreespace.herokuapp.com/users')
+        fetch('https://calvinfreespace.herokuapp.com/users')
           .then((response) => response.json())
           .then((json) => { setData(json); })
           .catch((error) => console.error(error))
@@ -60,16 +60,7 @@ export default function Home({ navigation }) {
     // Displays the FlatList containing all locations; each location can be tapped/clicked to
     // navigate to the LocationDetails screen.
     return (
-        <View>
-          {isLoading ? <ActivityIndicator/> : (
-            <FlatList
-              data={data}
-              keyExtractor={({ id }, index) => id.toString()}
-              renderItem={({ item }) => (
-                  <Text> { item.userid } </Text>
-              )}
-            />
-          )}
+          
         <View style={globalStyles.homeContainer}>
 
             <FlatList style={globalStyles.locationList} data={locations} renderItem={({ item }) => (
@@ -84,6 +75,15 @@ export default function Home({ navigation }) {
                             </Text>
                             <Text style={globalStyles.headers}>Current Capacity:</Text>
                             {/* Replace "x" with data pulled from database */}
+                            {isLoading ? <ActivityIndicator/> : (
+            <FlatList
+              data={data}
+              keyExtractor={({ id }, index) => id}
+              renderItem={({ item }) => (
+                  <Text> { item.usertype } </Text>
+              )}
+            />
+          )}
                             <Text style={globalStyles.numberText}>x / {item.maxCapacity}</Text>
                             {/* <Button title='Report Activity' color='#009933' onPress={() => navigation.navigate('ReportPage', item)} style={globalStyles.reportButton}> Report
                             </Button> */}
@@ -93,6 +93,5 @@ export default function Home({ navigation }) {
             )} />
         </View>
         
-        </View>
     );
 }
