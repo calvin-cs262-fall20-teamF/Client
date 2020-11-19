@@ -7,14 +7,16 @@
  ***************************************************************/
 
 // import functions and libraries
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, FlatList, Button, ImageBackground } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, ActivityIndicator, View, Text, TouchableOpacity, FlatList, Button, ImageBackground } from 'react-native';
 
 // import custom functions and styles
 import LocationCard from '../shared/locationCard';
 import { globalStyles } from '../styles/global';
 
 export default function Home({ navigation }) {
+    const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
     // List of campus locations
     const [locations, addLocation] = useState([
         { name: 'Commons Dining Hall', currentState: 'Not busy', maxCapacity: '200', image: require('../assets/locations/commons.jpg'), key: '1' },
@@ -41,11 +43,33 @@ export default function Home({ navigation }) {
         }
     };
 
+    // async function test() {
+    //     const userlist = await fetch('https://calvinfreespace.herokuapp.com/users');
+    //     const usser = await userlist.json();
+    // }
+
+    useEffect(() => {
+        fetch('http://calvinfreespace.herokuapp.com/users')
+          .then((response) => response.json())
+          .then((json) => { setData(json); })
+          .catch((error) => console.error(error))
+          .finally(() => setLoading(false));
+      }, []);
 
 
     // Displays the FlatList containing all locations; each location can be tapped/clicked to
     // navigate to the LocationDetails screen.
     return (
+        <View>
+          {isLoading ? <ActivityIndicator/> : (
+            <FlatList
+              data={data}
+              keyExtractor={({ id }, index) => id.toString()}
+              renderItem={({ item }) => (
+                  <Text> { item.userid } </Text>
+              )}
+            />
+          )}
         <View style={globalStyles.homeContainer}>
 
             <FlatList style={globalStyles.locationList} data={locations} renderItem={({ item }) => (
@@ -67,6 +91,8 @@ export default function Home({ navigation }) {
                     </LocationCard>
                 </TouchableOpacity>
             )} />
+        </View>
+        
         </View>
     );
 }
