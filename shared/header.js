@@ -7,17 +7,15 @@
  *
  ***************************************************************/
 
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 import { Dimensions } from "react-native";
 
-
 export default function Header({ navigation, title }) {
-
   const openMenu = () => {
     navigation.openDrawer();
-  }
+  };
 
   return (
     <View style={styles.header}>
@@ -31,21 +29,21 @@ export default function Header({ navigation, title }) {
 
 const styles = StyleSheet.create({
   header: {
-    width: '100%',
-    height: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: "100%",
+    height: "100%",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
   headerText: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 20,
-    color: '#fff',
+    color: "#fff",
     letterSpacing: 1,
   },
   icon: {
-    position: 'absolute',
+    position: "absolute",
     left: 16,
-    color: '#fff',
-  }
+    color: "#fff",
+  },
 });
