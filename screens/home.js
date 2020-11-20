@@ -43,13 +43,8 @@ export default function Home({ navigation }) {
         }
     };
 
-    // async function test() {
-    //     const userlist = await fetch('https://calvinfreespace.herokuapp.com/users');
-    //     const usser = await userlist.json();
-    // }
-
     useEffect(() => {
-        fetch('https://calvinfreespace.herokuapp.com/users')
+        fetch('https://calvinspace.herokuapp.com/users')
           .then((response) => response.json())
           .then((json) => { setData(json); })
           .catch((error) => console.error(error))
@@ -62,7 +57,15 @@ export default function Home({ navigation }) {
     return (
           
         <View style={globalStyles.homeContainer}>
-
+{isLoading ? <ActivityIndicator/> : (
+            <FlatList
+              data={data}
+              keyExtractor={({ id }, index) => id}
+              renderItem={({ item }) => (
+                  <Text> { item.usertype } </Text>
+              )}
+            />
+          )}
             <FlatList style={globalStyles.locationList} data={locations} renderItem={({ item }) => (
                 <TouchableOpacity onPress={() => navigation.navigate('ReportPage', item)}>
                     <LocationCard>
@@ -75,15 +78,7 @@ export default function Home({ navigation }) {
                             </Text>
                             <Text style={globalStyles.headers}>Current Capacity:</Text>
                             {/* Replace "x" with data pulled from database */}
-                            {isLoading ? <ActivityIndicator/> : (
-            <FlatList
-              data={data}
-              keyExtractor={({ id }, index) => id}
-              renderItem={({ item }) => (
-                  <Text> { item.usertype } </Text>
-              )}
-            />
-          )}
+                            
                             <Text style={globalStyles.numberText}>x / {item.maxCapacity}</Text>
                             {/* <Button title='Report Activity' color='#009933' onPress={() => navigation.navigate('ReportPage', item)} style={globalStyles.reportButton}> Report
                             </Button> */}
