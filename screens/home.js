@@ -8,7 +8,7 @@
 
 // import functions and libraries
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, ActivityIndicator, View, Text, TouchableOpacity, FlatList, Button, ImageBackground } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList, Button, ImageBackground, ActivityIndicator } from 'react-native';
 
 // import custom functions and styles
 import LocationCard from '../shared/locationCard';
@@ -16,7 +16,7 @@ import { globalStyles } from '../styles/global';
 
 export default function Home({ navigation }) {
     const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+    const [data, setData] = useState([]);
     // List of campus locations
     const [locations, addLocation] = useState([
         { name: 'Commons Dining Hall', currentState: 'Not busy', maxCapacity: '200', image: require('../assets/locations/commons.jpg'), key: '1' },
@@ -44,49 +44,43 @@ export default function Home({ navigation }) {
     };
 
     useEffect(() => {
-        fetch('https://calvinspace.herokuapp.com/users')
+        fetch("https://calvinspace.herokuapp.com/reports")
           .then((response) => response.json())
-          .then((json) => { setData(json); })
+          .then((json) => setData(json))
           .catch((error) => console.error(error))
           .finally(() => setLoading(false));
       }, []);
 
-
     // Displays the FlatList containing all locations; each location can be tapped/clicked to
     // navigate to the LocationDetails screen.
     return (
-          
         <View style={globalStyles.homeContainer}>
-{isLoading ? <ActivityIndicator/> : (
-            <FlatList
-              data={data}
-              keyExtractor={({ id }, index) => id}
-              renderItem={({ item }) => (
-                  <Text> { item.usertype } </Text>
-              )}
-            />
-          )}
-            <FlatList style={globalStyles.locationList} data={locations} renderItem={({ item }) => (
+            {isLoading ? <ActivityIndicator/> : (
+            <FlatList style={globalStyles.locationList}
+                data={data}
+                keyExtractor={({ id }, index) => id}
+                renderItem={({ item }) => (
+
                 <TouchableOpacity onPress={() => navigation.navigate('ReportPage', item)}>
                     <LocationCard>
-                        <ImageBackground source={item.image} imageStyle={{ borderRadius: 25 }} style={globalStyles.titleContainer} >
-                            <Text style={globalStyles.locationTitle}>{item.name}</Text>
+                        <ImageBackground source='../assets/locations/uppercrust.jpg' imageStyle={{ borderRadius: 25 }} style={globalStyles.titleContainer} >
+                            <Text style={globalStyles.locationname}>{item.locationname}</Text>
                         </ImageBackground>
                         <View style={globalStyles.statusContainer}>
                             <Text style={globalStyles.statusTitle}>
-                                <Text style={getActivityStyle(item.currentState)}>{item.currentState}</Text>
+                                <Text style={getActivityStyle(item.activitystatus)}>{item.activitystatus}</Text>
                             </Text>
                             <Text style={globalStyles.headers}>Current Capacity:</Text>
                             {/* Replace "x" with data pulled from database */}
-                            
-                            <Text style={globalStyles.numberText}>x / {item.maxCapacity}</Text>
+                            <Text style={globalStyles.numberText}> {item.estimatedpopulation} / {item.maxcapacity}</Text>
                             {/* <Button title='Report Activity' color='#009933' onPress={() => navigation.navigate('ReportPage', item)} style={globalStyles.reportButton}> Report
                             </Button> */}
                         </View>
                     </LocationCard>
                 </TouchableOpacity>
-            )} />
+            )}
+            />
+            )}
         </View>
-        
     );
 }
