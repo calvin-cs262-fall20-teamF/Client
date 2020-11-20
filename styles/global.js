@@ -8,7 +8,7 @@
  ***************************************************************/
 
 // import functions and libraries
-import { StyleSheet, Dimensions} from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 // get application window dimensions
 const windowWidth = Dimensions.get('window').width;
@@ -48,6 +48,7 @@ export const globalStyles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#fff',              // light gray
+    textAlign: 'center'
   },
   titleContainer: {
     flex: 1,
@@ -159,8 +160,8 @@ export const globalStyles = StyleSheet.create({
   // Status button component
   statusButton: {
     borderRadius: 50,
-    height: windowHeight/9,
-    width: windowWidth/1.1,
+    height: windowHeight / 9,
+    width: windowWidth / 1.1,
     elevation: 3,
     shadowOffset: { width: 1, height: 1 },
     shadowColor: '#333',        // dark gray
@@ -180,7 +181,7 @@ export const globalStyles = StyleSheet.create({
   },
   // Color for a selected status button
   statusButtonSelected: {
-    backgroundColor: '#F3CD00'      // Calvin gold
+    backgroundColor: '#daa520'      // Calvin gold
   },
   // Color for a disabled submit button
   submitButtonDisabled: {
@@ -245,7 +246,7 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: '#BEBEBE',           // light gray
   },
   slightlyBusyBackground: {
-    backgroundColor: '#806666',           // grayish red
+    backgroundColor: '#A89999',           // pinkish red
   },
   busyBackground: {
     backgroundColor: '#805A5A',           // less less red
