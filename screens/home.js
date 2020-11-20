@@ -43,6 +43,21 @@ export default function Home({ navigation }) {
         }
     };
 
+    function getImage(locationname) {
+        console.log(locationname);
+        if (locationname == 'Commons Dining Hall') {
+            return require('../assets/locations/commons.jpg')
+        } else if (locationname == 'Knollcrest Dining Hall') {
+            return require('../assets/locations/knollcrest.jpg')
+        } else if (locationname == 'Uppercrust') {
+            return require('../assets/locations/uppercrust.jpg')
+        } else if (locationname == 'Johnny\'s') {
+            return require('../assets/locations/johnnys2.jpg')
+        } else if (locationname == 'Peet\'s Coffee') {
+            return require('../assets/locations/peets.jpg')
+        }
+    }
+
     useEffect(() => {
         fetch("https://calvinspace.herokuapp.com/reports")
           .then((response) => response.json())
@@ -63,7 +78,7 @@ export default function Home({ navigation }) {
 
                 <TouchableOpacity onPress={() => navigation.navigate('ReportPage', item)}>
                     <LocationCard>
-                        <ImageBackground source={require('../assets/locations/uppercrust.jpg')} imageStyle={{ borderRadius: 25 }} style={globalStyles.titleContainer} >
+                        <ImageBackground source={getImage(item.locationname)} imageStyle={{ borderRadius: 25 }} style={globalStyles.titleContainer} >
                             <Text style={globalStyles.locationTitle}>{item.locationname}</Text>
                         </ImageBackground>
                         <View style={globalStyles.statusContainer}>
