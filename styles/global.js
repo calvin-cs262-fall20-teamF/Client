@@ -180,7 +180,11 @@ export const globalStyles = StyleSheet.create({
   },
   // Color for a selected status button
   statusButtonSelected: {
-    backgroundColor: '#aaa'     // light gray
+    backgroundColor: '#F3CD00'      // Calvin gold
+  },
+  // Color for a disabled submit button
+  submitButtonDisabled: {
+    backgroundColor: '#aaa'         // light gray
   },
   // Container for text within status buttons
   reportTextContainer: {
@@ -252,7 +256,7 @@ export const globalStyles = StyleSheet.create({
   extremelyBusyBackground: {
     backgroundColor: '#670C07',           // crimson red
   },
-  submitButtonBackground: {
+  submitButtonEnabled: {
     backgroundColor: '#0066FF'
   },
   /**************************
