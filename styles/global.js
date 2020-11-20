@@ -43,12 +43,16 @@ export const globalStyles = StyleSheet.create({
     flexDirection: 'row',
     padding: 20,
   },
+  locationImage: {
+    borderRadius: 25,
+    opacity: 0.7,
+  },
   locationTitle: {
     fontFamily: 'nunito-bold',
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#fff',              // light gray
-    textAlign: 'center'
+    color: '#fff',              // white
+    textAlign: 'center',
   },
   titleContainer: {
     flex: 1,
@@ -59,42 +63,39 @@ export const globalStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    opacity: 0.7,
+    backgroundColor: 'rgba(0,0,0,.8)', // to darken location image for contrast
+    borderRadius: 25            // to fit the locationImage's styling
   },
-
   statusContainer: {
-    flex: 1,
+    flex: 1.5,
     backgroundColor: '#fff',    // white
     alignItems: 'center',
     justifyContent: 'center'
   },
+  statusTitleContainer: {
+    flex: 1,
+    padding: 10,
+  },
   statusTitle: {
     fontFamily: 'nunito-bold',
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#333',              // light gray
     textAlign: 'center'
   },
-  /**************************
-   * Location screen styles
-   **************************/
-  locationScreenContainer: {
+  currentCapacityContainer: {
     flex: 1,
-    padding: 10,
     alignItems: 'center',
-    backgroundColor: '#fff'     // white
+    justifyContent: 'center',
+    padding: 10,
   },
-  locationImage: {
-    width: 300,
-    height: 200,
-  },
-  headers: {
+  capacityHeader: {
     fontFamily: 'nunito-bold',
     fontSize: 15,
     fontWeight: 'bold',
     color: '#8c8c8c',           // very light gray
     textAlign: 'center',
-    marginTop: 20,
+    marginTop: 10,
   },
   stateText: {
     fontFamily: 'nunito-regular',
@@ -103,15 +104,12 @@ export const globalStyles = StyleSheet.create({
   numberText: {
     fontFamily: 'nunito-bold',
     fontSize: 25,
-    marginBottom: 20,
+    textAlign: 'center',
     color: '#999900',           // gold
   },
   activityTitle: {
     fontFamily: 'nunito-bold',
     fontSize: 25,
-  },
-  reportButton: {
-    padding: 10,
   },
   /**************************
    * Report screen styles
