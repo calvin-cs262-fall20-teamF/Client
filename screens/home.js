@@ -59,7 +59,7 @@ export default function Home({ navigation }) {
     }
 
     useEffect(() => {
-        fetch("https://calvinfreespace.herokuapp.com/reports")
+        fetch("https://calvinspace.herokuapp.com/reports")
           .then((response) => response.json())
           .then((json) => setData(json))
           .catch((error) => console.error(error))
