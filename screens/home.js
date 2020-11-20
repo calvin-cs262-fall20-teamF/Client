@@ -63,8 +63,8 @@ export default function Home({ navigation }) {
 
                 <TouchableOpacity onPress={() => navigation.navigate('ReportPage', item)}>
                     <LocationCard>
-                        <ImageBackground source={item.imagelocation} imageStyle={{ borderRadius: 25 }} style={globalStyles.titleContainer} >
-                            <Text style={globalStyles.locationname}>{item.locationname}</Text>
+                        <ImageBackground source={require('../assets/locations/uppercrust.jpg')} imageStyle={{ borderRadius: 25 }} style={globalStyles.titleContainer} >
+                            <Text style={globalStyles.locationTitle}>{item.locationname}</Text>
                         </ImageBackground>
                         <View style={globalStyles.statusContainer}>
                             <Text style={globalStyles.statusTitle}>
