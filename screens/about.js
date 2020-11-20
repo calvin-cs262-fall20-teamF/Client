@@ -42,8 +42,7 @@ export default function About({ navigation }) {
           <Text style={styles.developers}>Developers: {"\n"}</Text>
           <Text style={styles.people}>
             Esther Cha {"\n"}Zachary Chin{"\n"}Seongil (Leo) Kim{"\n"}YoungIn
-            Kim
-            {"\n"}Sinai Park{"\n"}Benjamin Westerhof
+            Kim {"\n"}Sinai Park{"\n"}Benjamin Westerhof
           </Text>
         </View>
       </ScrollView>
