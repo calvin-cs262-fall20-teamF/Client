@@ -78,18 +78,22 @@ export default function Home({ navigation }) {
 
                 <TouchableOpacity onPress={() => navigation.navigate('ReportPage', item)}>
                     <LocationCard>
-                        <ImageBackground source={getImage(item.locationname)} imageStyle={{ borderRadius: 25 }} style={globalStyles.titleContainer} >
+                        <ImageBackground source={getImage(item.locationname)} imageStyle={globalStyles.locationImage} style={globalStyles.titleContainer} >
                             <Text style={globalStyles.locationTitle}>{item.locationname}</Text>
                         </ImageBackground>
                         <View style={globalStyles.statusContainer}>
-                            <Text style={globalStyles.statusTitle}>
-                                <Text style={getActivityStyle(item.activitystatus)}>{item.activitystatus}</Text>
-                            </Text>
-                            <Text style={globalStyles.headers}>Current Capacity:</Text>
-                            {/* Replace "x" with data pulled from database */}
-                            <Text style={globalStyles.numberText}> {item.estimatedpopulation} / {item.maxcapacity}</Text>
-                            {/* <Button title='Report Activity' color='#009933' onPress={() => navigation.navigate('ReportPage', item)} style={globalStyles.reportButton}> Report
-                            </Button> */}
+                            {/* Status title */}
+                            <View style={globalStyles.statusTitleContainer}>
+                                <Text style={globalStyles.statusTitle}>
+                                    <Text style={getActivityStyle(item.activitystatus)}>{item.activitystatus}</Text>
+                                </Text>
+                            </View>
+                            <View style={globalStyles.currentCapacityContainer}>
+                                {/* Current capacity title */}
+                                <Text style={globalStyles.capacityHeader}>Current Capacity:</Text>
+                                {/* Current capacity ratio */}
+                                <Text style={globalStyles.numberText}> {item.estimatedpopulation} / {item.maxcapacity}</Text>
+                            </View>
                         </View>
                     </LocationCard>
                 </TouchableOpacity>
