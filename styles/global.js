@@ -256,7 +256,7 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: "#670C07", // crimson red
   },
   submitButtonEnabled: {
-    backgroundColor: "#0066FF",
+    backgroundColor: '#4682b4'
   },
   /**************************
    * About page fonts
