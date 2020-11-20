@@ -59,9 +59,10 @@ export default function ReportPage({ route, navigation }) {
 
     return (
     <View style={globalStyles.reportScreenContainer}>
+
         {/* Location name */}
         <View style={globalStyles.locationTextContainer}>
-            <Text style={globalStyles.locationText}>{ route.params.name } </Text>
+            <Text style={globalStyles.locationText}>{ route.params.locationname } </Text>
         </View>
 
         {/* Report button list */}
