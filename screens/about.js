@@ -19,8 +19,8 @@ import { globalStyles } from "../styles/global";
 
 export default function About({ navigation }) {
   return (
-    <View style={{ flex: 1 }}>
-      <ScrollView style={{ marginTop: -20 }}>
+    <View>
+      <View style={{ marginTop: -20 }}>
         <ImageOverlay
           source={Background}
           height={250}
@@ -45,7 +45,7 @@ export default function About({ navigation }) {
             Kim {"\n"}Sinai Park{"\n"}Benjamin Westerhof
           </Text>
         </View>
-      </ScrollView>
+      </View>
     </View>
   );
 }
