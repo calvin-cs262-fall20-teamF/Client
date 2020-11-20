@@ -19,8 +19,8 @@ import { globalStyles } from "../styles/global";
 
 export default function About({ navigation }) {
   return (
-    <View style={{flex: 1}}>
-      <ScrollView style={{marginTop: -20}}>
+    <View style={{ flex: 1 }}>
+      <ScrollView style={{ marginTop: -20 }}>
         <ImageOverlay
           source={Background}
           height={250}
@@ -30,17 +30,19 @@ export default function About({ navigation }) {
         <View style={styles.contentCard}>
           <Text style={styles.appTitle}>Freespace{"\n"}</Text>
           <Text style={styles.vision}>
-            Freespace, our user-driven mobile app is tailored specifically towards
-            Calvin University students in search of an available area on campus.
-            To have less wasted time and more productive time, Freespace utilizes
-            a listing of the dining halls on campus, alongside an estimate of
-            their availability to provide real-time data on public space usage.
+            Freespace, our user-driven mobile app is tailored specifically
+            towards Calvin University students in search of an available area on
+            campus. To have less wasted time and more productive time, Freespace
+            utilizes a listing of the dining halls on campus, alongside an
+            estimate of their availability to provide real-time data on public
+            space usage.
           </Text>
         </View>
         <View style={styles.devCard}>
           <Text style={styles.developers}>Developers: {"\n"}</Text>
           <Text style={styles.people}>
-            Esther Cha {"\n"}Zachary Chin{"\n"}Seongil (Leo) Kim{"\n"}YoungIn Kim
+            Esther Cha {"\n"}Zachary Chin{"\n"}Seongil (Leo) Kim{"\n"}YoungIn
+            Kim
             {"\n"}Sinai Park{"\n"}Benjamin Westerhof
           </Text>
         </View>
