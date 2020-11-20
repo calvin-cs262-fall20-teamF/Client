@@ -55,6 +55,45 @@ export default function ReportPage({ route, navigation }) {
         setSubmitBlocker(false);
     };
 
+    const submitHandler = () => {
+        //Add to current Status table, need activitystatus, locationid, reportedtime
+        
+        let weight = activeButton.weight;
+        let time = new Date();
+        let activityStatus = "";
+        let locationID = route.params.ID
+
+        //switch statement to assign the correct activity status
+        switch (weight) {
+            case 1:
+                activityStatus = "NOT BUSY"        
+                break;
+            case 2:
+                activityStatus = "SLIGHTLY BUSY"        
+                break;
+            case 3:
+                activityStatus = "BUSY"        
+                break;
+            case 4:
+                activityStatus = "VERY BUSY"        
+                break;
+            default:
+                activityStatus = "EXTREMELY SBUSY"
+                break;
+        }
+
+        //uses a REST API to shunt the data up to the service for storing
+        fetch('https://calvinfreespace.herokuapp.com/', {
+            method: 'POST',
+            body: JSON.stringify({
+                activitystatus: activityStatus,
+                locationid: locationID,
+                reportedtime: time,
+            })
+        });
+
+    };
+
 
     return (
     <View style={globalStyles.reportScreenContainer}>
