@@ -158,9 +158,9 @@ export const globalStyles = StyleSheet.create({
   },
   // Status button component
   statusButton: {
-    borderRadius: 20,
-    height: windowHeight/5,
-    width: windowWidth/2.1,
+    borderRadius: 50,
+    height: windowHeight/9,
+    width: windowWidth/1.1,
     elevation: 3,
     shadowOffset: { width: 1, height: 1 },
     shadowColor: '#333',        // dark gray
@@ -171,6 +171,7 @@ export const globalStyles = StyleSheet.create({
   },
   // Stuff within status button
   statusButtonContent: {
+    flexDirection: 'row',
     borderRadius: 20,
     marginHorizontal: 5,
     marginVertical: 5,
@@ -183,13 +184,15 @@ export const globalStyles = StyleSheet.create({
   },
   // Container for text within status buttons
   reportTextContainer: {
-    flex: 0.5,
+    flex: 1,
+    // backgroundColor: 'blue',
     alignContent: 'center',
     justifyContent: 'center',
   },
   // Container for pie chart within status buttons
   reportImageContainer: {
-    flex: 1,
+    flex: 0.5,
+    // backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -198,7 +201,7 @@ export const globalStyles = StyleSheet.create({
     fontFamily: 'nunito-bold',
     fontSize: 19,
     fontWeight: 'bold',
-    color: 'black',
+    color: '#fff',
     textAlign: 'center'
   },
   submitText: {
@@ -210,8 +213,8 @@ export const globalStyles = StyleSheet.create({
   },
   // Pie chart within status buttons
   pieChart: {
-    height: 70,
-    width: 70,
+    height: 65,
+    width: 65,
   },
   /**************************
    * Status colors
@@ -235,19 +238,19 @@ export const globalStyles = StyleSheet.create({
    * Status button background colors
    **************************/
   notBusyBackground: {
-    backgroundColor: '#009933',
+    backgroundColor: '#BEBEBE',           // light gray
   },
   slightlyBusyBackground: {
-    backgroundColor: '#a5c932',           // light green
+    backgroundColor: '#806666',           // grayish red
   },
   busyBackground: {
-    backgroundColor: '#f8da07',           // yellow
+    backgroundColor: '#805A5A',           // less less red
   },
   veryBusyBackground: {
-    backgroundColor: '#ff9900',           // orange
+    backgroundColor: '#803333',           // less red
   },
   extremelyBusyBackground: {
-    backgroundColor: '#ff3300',           // red
+    backgroundColor: '#670C07',           // crimson red
   },
   submitButtonBackground: {
     backgroundColor: '#0066FF'

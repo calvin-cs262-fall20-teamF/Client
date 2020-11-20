@@ -55,7 +55,7 @@ export default function ReportPage({ route, navigation }) {
         setSubmitBlocker(false);
     };
 
-    const numCols = 2;
+    const numCols = 1;
 
     return (
     <View style={globalStyles.reportScreenContainer}>
@@ -75,12 +75,13 @@ export default function ReportPage({ route, navigation }) {
 
                 <TouchableOpacity>
                     <StatusButton name={item.name} buttonColor={item.bgColor} buttonID={item.key} selected={item.isSelected} reportCallback={statusButtonCallback}>
-                        <View style={globalStyles.reportTextContainer}>
-                            <Text style={globalStyles.statusText}>{ item.name }</Text>
-                        </View>
                         <View style={globalStyles.reportImageContainer}>
                             <Image source={item.chart} style={globalStyles.pieChart} />
                         </View>
+                        <View style={globalStyles.reportTextContainer}>
+                            <Text style={globalStyles.statusText}>{ item.name }</Text>
+                        </View>
+                        
                     </StatusButton>
                 </TouchableOpacity>
             )}>
