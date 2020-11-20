@@ -48,6 +48,7 @@ export const globalStyles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#fff',              // light gray
+    textAlign: 'center'
   },
   titleContainer: {
     flex: 1,
@@ -245,7 +246,7 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: '#BEBEBE',           // light gray
   },
   slightlyBusyBackground: {
-    backgroundColor: '#A89999',           // grayish red
+    backgroundColor: '#A89999',           // pinkish red
   },
   busyBackground: {
     backgroundColor: '#805A5A',           // less less red
