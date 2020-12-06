@@ -80,31 +80,33 @@ export default function Home({ navigation }) {
 
   // If conditional function to change the color of business based on the current state
   function getActivityStyle(value) {
-    if (value >= 1.0 && value < 2.0)
+    if (value > 0 && value < 1.0)
       return globalStyles.notBusy;
-    else if (value >= 2.0 && value < 3.0)
+    else if (value >= 1.0 && value < 2.0)
       return globalStyles.slightlyBusy;
-    else if (value >= 3.0 && value < 4.0)
+    else if (value >= 2.0 && value < 3.0)
       return globalStyles.busy;
-    else if (value >= 4.0 && value < 5.0)
+    else if (value >= 3.0 && value < 4.0)
       return globalStyles.veryBusy;
-    else if (value >= 5.0)
+    else if (value >= 4.0)
       return globalStyles.extremelyBusy;
     else
-      return globalStyles.detailsText;
+      return globalStyles.noReports;
   }
 
   function getActivityLevel(value) {
-    if (value >= 1.0 && value < 2.0)
+    if (value > 0 && value < 1.0)
       return "Not busy";
-    else if (value >= 2.0 && value < 3.0)
+    else if (value >= 1.0 && value < 2.0)
       return "Slightly busy";
-    else if (value >= 3.0 && value < 4.0)
+    else if (value >= 2.0 && value < 3.0)
       return "Busy";
-    else if (value >= 4.0 && value < 5.0)
+    else if (value >= 3.0 && value < 4.0)
       return "Very busy";
-    else if (value >= 5.0)
+    else if (value >= 4.0)
       return "Extremely busy";
+    else
+      return "N/A";
   }
 
   useEffect(() => {

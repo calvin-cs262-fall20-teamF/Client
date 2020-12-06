@@ -222,6 +222,9 @@ export const globalStyles = StyleSheet.create({
   /**************************
    * Status colors
    **************************/
+  noReports: {
+    color: "black", // black
+  },
   notBusy: {
     color: "#009933", // dark green
   },
