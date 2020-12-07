@@ -275,4 +275,12 @@ export const globalStyles = StyleSheet.create({
     fontSize: 18,
     color: "#000",
   },
+  /**************************
+   * Navigation header styles
+   **************************/
+  navHeader: {
+    fontFamily: "nunito-bold",
+    fontSize: 20,
+    color: "#fff",
+  },
 });

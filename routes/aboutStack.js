@@ -31,7 +31,8 @@ export default function aboutStack() {
         name="About"
         component={About}
         options={{
-          headerTitle: () => <Header title="About FreeSpace" />,
+          headerTitle: () => 
+            <Text style={globalStyles.navHeader}> About Freespace </Text>,
         }}
       />
     </Stack.Navigator>
