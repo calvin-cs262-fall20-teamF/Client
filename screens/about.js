@@ -30,10 +30,10 @@ export default function About({ navigation }) {
         <View style={styles.contentCard}>
           <Text style={styles.appTitle}>Freespace{"\n"}</Text>
           <Text style={styles.vision}>
-            Freespace, our user-driven mobile app is tailored specifically
+            Freespace is a user-driven productivity app tailored specifically
             towards Calvin University students in search of an available area on
-            campus. To have less wasted time and more productive time, Freespace
-            utilizes a listing of the dining halls on campus, alongside an
+            campus. To diminish wasted time and boost productivity, Freespace
+            utilizes a listing of the dining halls on campus and an
             estimate of their availability to provide real-time data on public
             space usage.
           </Text>
