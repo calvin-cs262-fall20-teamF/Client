@@ -11,7 +11,7 @@
 // import functions and libraries
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { View, Text, Button, Image } from "react-native";
+import { Text, Button } from "react-native";
 
 // import custom functions and styles
 import Map from "../screens/map";
@@ -31,7 +31,8 @@ export default function MapStack() {
         name="Campus Map"
         component={Map}
         options={{
-          headerTitle: () => <Header title="Campus Map" />,
+          headerTitle: () => 
+            <Text style={globalStyles.navHeader}> Campus Map </Text>,
 
           headerRight: () => (
             <Button

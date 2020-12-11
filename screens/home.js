@@ -24,20 +24,6 @@ import LocationCard from "../shared/locationCard";
 import { globalStyles } from "../styles/global";
 
 export default function Home({ navigation }) {
-  // State for refresh
-  const [refreshing, setRefreshing] = useState(false);
-  // Wait function
-  const wait = (timeout) => {
-    return new Promise(resolve => {
-      setTimeout(resolve, timeout);
-    });
-  }
-  // To show refresh indicator
-  const onRefresh = useCallback(() => {
-    setRefreshing(true);
-    wait(1000).then(() => setRefreshing(false));
-  }, []);
-
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -115,7 +101,7 @@ export default function Home({ navigation }) {
       .then((json) => setData(json))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
-  }, []);
+  }, [data]);
 
   // Displays the FlatList containing all locations; each location can be tapped/clicked to
   // navigate to the LocationDetails screen.
@@ -126,11 +112,8 @@ export default function Home({ navigation }) {
       ) : (
         <FlatList
           style={globalStyles.locationList}
-          refreshControl={
-            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} title="Pull down to refresh the page!"/>
-          }
           data={data}
-          keyExtractor={({ id }, index) => id}
+          keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
             <TouchableOpacity
               onPress={() => navigation.navigate("ReportPage", item)}
@@ -159,13 +142,12 @@ export default function Home({ navigation }) {
 
                     {/* Current capacity title */}
                     <Text style={globalStyles.capacityHeader}>
-                      Current Capacity:
+                      Max capacity:
                     </Text>
 
                     {/* Current capacity ratio */}
                     <Text style={globalStyles.numberText}>
-                      {" "}
-                      {item.estimatedpopulation} / {item.maxcapacity}
+                      {item.maxcapacity}
                     </Text>
                   </View>
                 </View>

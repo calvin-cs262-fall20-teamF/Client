@@ -11,6 +11,7 @@
 // import functions and libraries
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+import { Text, Button } from "react-native";
 
 // import custom functions and styles
 import Home from "../screens/home";
@@ -24,6 +25,7 @@ export default function HomeStack() {
     <Stack.Navigator
       screenOptions={{
         headerStyle: { backgroundColor: "#8C2131", height: 60 },
+        headerTitleStyle: {fontSize: 20},
         headerTintColor: "#fff",
       }}
     >
@@ -31,13 +33,17 @@ export default function HomeStack() {
         name="Home"
         component={Home}
         options={{
-          headerTitle: () => <Header title="Home" />,
+          headerTitle: () => 
+            <Text style={globalStyles.navHeader}> Home </Text>,
         }}
       />
       <Stack.Screen
         name="ReportPage"
         component={ReportPage}
-        options={{ title: "Report" }}
+        options={{
+          headerTitle: () => 
+            <Text style={globalStyles.navHeader}> Report </Text>,
+        }}
       />
     </Stack.Navigator>
   );

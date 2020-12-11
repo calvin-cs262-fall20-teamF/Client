@@ -9,7 +9,7 @@
 
 // import functions and libraries
 import React, { Component } from "react";
-import ImageOverlay from "react-native-image-overlay";
+import MapView, { Marker } from "react-native-maps";
 import ModalImage from "react-modal-image";
 import {
   StyleSheet,
@@ -26,51 +26,24 @@ import {
 import { globalStyles } from "../styles/global";
 
 export default function Map({ navigation }) {
+  var markers = [
+    {
+      latitude: 42.93, 
+      longitude: -85.5875,
+      title: "Commons Dining Hall",
+    }
+  ]
+
   return (
-    <ImageOverlay
-      source={{
-        uri:
-          "https://calvin.edu/dotAsset/184d0710-a659-4ef6-bc18-d0ac7d9cd057/",
-      }}
-      height={700}
-      overlayAlpha={0.4}
-      overlayColor="white"
-      blurRadius={0}
-      contentPosition="center"
-    ></ImageOverlay>
+    <MapView 
+      style={{flex: 1}}
+      region={{latitude: 42.932, longitude: -85.5875, latitudeDelta: 0.0045, longitudeDelta: 0.0045}}
+      showsUserLocation={true}
+    >
+      <Marker coordinate={{ latitude: 42.9314, longitude: -85.5868 }} title="Commons Dining Hall" pinColor="blue" />
+      <Marker coordinate={{ latitude: 42.9332, longitude: -85.5863 }} title="Knollcrest Dining Hall" />
+      <Marker coordinate={{ latitude: 42.9310, longitude: -85.5875 }} title="Uppercrust" />
+
+    </MapView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  redmarker: {
-    height: 50,
-    width: 50,
-    left: 100,
-  },
-
-  bluemarker: {
-    height: 50,
-    width: 50,
-    left: 100,
-  },
-  yellowmarker: {
-    height: 50,
-    width: 50,
-    left: 100,
-  },
-  orangemarker: {
-    height: 50,
-    width: 50,
-    left: 100,
-  },
-  greenmarker: {
-    height: 50,
-    width: 50,
-    left: 100,
-  },
-});
