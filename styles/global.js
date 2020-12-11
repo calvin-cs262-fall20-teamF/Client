@@ -276,6 +276,23 @@ export const globalStyles = StyleSheet.create({
     color: "#000",
   },
   /**************************
+   * Help page text styles
+   **************************/
+  helpScroll: {
+    flex: 1,
+    padding: 10,
+  },
+  helpSection: {
+    fontFamily: "nunito-bold",
+    fontSize: 23,
+    color: "#000",
+  },
+  helpText: {
+    fontFamily: "nunito-regular",
+    fontSize: 20,
+    color: "#000",
+  },
+  /**************************
    * Navigation header styles
    **************************/
   navHeader: {

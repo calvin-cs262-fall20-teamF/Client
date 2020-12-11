@@ -23,7 +23,7 @@ import StatusButton from "../shared/statusButton";
 import SubmitButton from "../shared/submitButton";
 import { globalStyles } from "../styles/global";
 
-export default function ReportPage({ route, navigation }) {
+export default function Report({ route, navigation }) {
   // stores the active button to allow only one button as "grayed out"
   const [activeButtonValue, setActiveButtonValue] = useState(0);
   

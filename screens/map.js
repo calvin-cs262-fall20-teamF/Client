@@ -40,7 +40,7 @@ export default function Map({ navigation }) {
       region={{latitude: 42.932, longitude: -85.5875, latitudeDelta: 0.0045, longitudeDelta: 0.0045}}
       showsUserLocation={true}
     >
-      <Marker coordinate={{ latitude: 42.9314, longitude: -85.5868 }} title="Commons Dining Hall" pinColor="blue" />
+      <Marker coordinate={{ latitude: 42.9314, longitude: -85.5868 }} title="Commons Dining Hall" pinColor="#a5c932" />
       <Marker coordinate={{ latitude: 42.9332, longitude: -85.5863 }} title="Knollcrest Dining Hall" />
       <Marker coordinate={{ latitude: 42.9310, longitude: -85.5875 }} title="Uppercrust" />
 

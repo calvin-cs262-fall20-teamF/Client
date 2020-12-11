@@ -15,9 +15,7 @@ import {
   FlatList,
   ImageBackground,
   ActivityIndicator,
-  RefreshControl
 } from "react-native";
-import { withSafeAreaInsets } from "react-native-safe-area-context";
 
 // import custom functions and styles
 import LocationCard from "../shared/locationCard";
@@ -116,7 +114,7 @@ export default function Home({ navigation }) {
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
             <TouchableOpacity
-              onPress={() => navigation.navigate("ReportPage", item)}
+              onPress={() => navigation.navigate("Report", item)}
             >
               <LocationCard>
                 <ImageBackground
