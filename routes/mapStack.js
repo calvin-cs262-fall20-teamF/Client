@@ -8,17 +8,17 @@
  * map navigation feature(scrolling, details, live reset)
  ***************************************************************/
 
-// import functions and libraries
+// Import components and libraries
 import React from "react";
+import { Text } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Text, Button } from "react-native";
 
-// import custom functions and styles
+// Import custom components and styles
 import Map from "../screens/map";
 import MapHelp from "../screens/help/mapHelp"
 import HelpButton from "../shared/helpButton";
 import { globalStyles } from "../styles/global";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Stack = createStackNavigator();
 export default function MapStack({ navigation }) {

@@ -6,10 +6,9 @@
  * reportPage.js gives users the ability to submit a report on their location
  ***************************************************************/
 
-// import functions and libraries
+// Import components and libraries
 import React, { useState } from "react";
 import {
-  StyleSheet,
   View,
   Text,
   TouchableOpacity,
@@ -18,7 +17,7 @@ import {
 } from "react-native";
 import { StackActions } from "@react-navigation/native";
 
-// import custom functions and styles
+// Import custom components and styles
 import StatusButton from "../shared/statusButton";
 import SubmitButton from "../shared/submitButton";
 import { globalStyles } from "../styles/global";

@@ -7,33 +7,11 @@
  * (see home.js).
  ***************************************************************/
 
-// import functions and libraries
-import React, { Component } from "react";
+// Import components and libraries
+import React from "react";
 import MapView, { Marker } from "react-native-maps";
-import ModalImage from "react-modal-image";
-import {
-  StyleSheet,
-  View,
-  Text,
-  ActivityIndicator,
-  Image,
-  ImageBackground,
-  Button,
-  Modal,
-} from "react-native";
 
-// import custom functions and styles
-import { globalStyles } from "../styles/global";
-
-export default function Map({ navigation }) {
-  var markers = [
-    {
-      latitude: 42.93, 
-      longitude: -85.5875,
-      title: "Commons Dining Hall",
-    }
-  ]
-
+export default function Map() {
   return (
     <MapView 
       style={{flex: 1}}

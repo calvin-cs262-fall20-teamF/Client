@@ -1,3 +1,14 @@
+/***************************************************************
+ * submitButton.js
+ *
+ * Last modified: December 10, 2020
+ *
+ * submitButton.js contains the SubmitButton component, which is
+ * used in the Report page. It sends an alert depending on
+ * whether or not a status button has been selected.
+ ***************************************************************/
+
+// Import components
 import React, { useState } from "react";
 import { View, Alert } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";

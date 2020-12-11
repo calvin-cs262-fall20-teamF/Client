@@ -1,12 +1,14 @@
 /***************************************************************
- * home.js
+ * homeHelp.js
  *
- * Last modified: October 19, 2020
+ * Last modified: December 10, 2020
  *
- * home.js contains and displays the list of campus locations.
+ * homeHelp.js displays on-line help for the Home page.
+ * The full end-user documentation can be found here:
+ * https://github.com/calvin-cs262-fall2020-Freespace/Project/blob/master/online-help.md
  ***************************************************************/
 
-// import functions and libraries
+// Import components and libraries
 import React from "react";
 import {
   View,
@@ -14,73 +16,77 @@ import {
   ScrollView,
 } from "react-native";
 
-// import custom functions and styles
+// Import custom styles
 import { globalStyles } from "../../styles/global";
 
-export default function ReportHelp({ navigation }) {
+export default function HomeHelp({ navigation }) {
   return (
     <View style={{flex: 1}}>
       <ScrollView style={globalStyles.helpScroll}>
 
         <Text style={globalStyles.helpText}> 
-          You can use the Report page to submit a report on your perception of the activity level of a dining hall. 
+          You can use the Home page to peruse the list of eateries on campus and view each eatery's 
+          current activity levels (busyness). {"\n"}
+        </Text>
+
+        <Text style={globalStyles.helpText}>
+          Imagine that you are deciding on which dining hall to go to for dinner.
+          You want to go to the dining hall that is the least busy. 
+          The detailed steps in this section show you how to:
           {"\n"}
         </Text>
 
         <Text style={globalStyles.helpText}>
-          Imagine that you are in at Commons Dining Hall during the dinner rush. 
-          You want to send a report to record the busyness of the dining hall. 
-          The detailed steps in this section show you how to {"\n"}
+          1) scroll through the list of locations {"\n"}
+          2) check how busy each dining hall is {"\n"}
+          3) check max capacity of the location {"\n"}
+          4) choose a dining hall to submit a report for {"\n"}
         </Text>
 
-        <Text style={globalStyles.helpText}>
-          1) verify that you are reporting for a certain dining hall, {"\n"}
-          2) interpret the buttons on the Report page, {"\n"}
-          3) submit a report. {"\n"}
-        </Text>
-
-        <Text style={globalStyles.helpSection}>1. Verifying the Correct Location</Text>
+        <Text style={globalStyles.helpSection}>1. Browsing Locations</Text>
 
         <Text style={globalStyles.helpText}>
           {"\n"}
-          To verify that you created a report for the target dining hall, 
-          look at the text in the horizontal white strip directly under the maroon page header. 
-          The text should match the name of the location that you want to submit a report for 
-          (e.g. for Commons Dining Hall, the text should read, "Commons Dining Hall"). 
+          From the Home screen, scroll up or down to browse through the locations listed. 
+          The left side of each card on the screen has the name of the location. 
+          The right side of each card contains information about that specific location.
+          {"\n"}
+        </Text>
+
+        <Text style={globalStyles.helpSection}>2. Finding How Busy a Dining Hall Is</Text>
+
+        <Text style={globalStyles.helpText}>
+          {"\n"}
+          For each location, there is an English-language phrase representative of the location's busyness level. 
+          We use the scale below to generalize activity levels. 
+          Each phrase has a color related to it to make identification easier.
           {"\n\n"}
-          If the text is not the name of the location you want to submit a report for, 
-          tap the back arrow labelled "Home" at the top left corner of the screen. 
-          From there, find the correct location (see Section 1).
+          <Text style={globalStyles.noReports} >N/A</Text> (no reports have been submitted in the last hour) {"\n"}
+          <Text style={globalStyles.notBusy} >Not busy</Text> {"\n"}
+          <Text style={globalStyles.slightlyBusy} >Slightly busy</Text> {"\n"}
+          <Text style={globalStyles.busy} >Busy</Text> {"\n"}
+          <Text style={globalStyles.veryBusy} >Very busy</Text> {"\n"}
+          <Text style={globalStyles.extremelyBusy} >Extremely busy</Text>
           {"\n"}
         </Text>
 
-        <Text style={globalStyles.helpSection}>2. Interpreting the Buttons</Text>
+        <Text style={globalStyles.helpSection}>3. Checking Maximum Capacity</Text>
 
         <Text style={globalStyles.helpText}>
           {"\n"}
-          The buttons on the Report page are listed in order of increasing busyness, from top to bottom. 
-          The pie chart icon on the left side of the button provides a visual indicator of approximate busyness level. 
-          The pie charts' white fill is associated with an approximate busyness level 
-          (e.g. if a dining hall is a quarter full, the pie chart that is closest to one-fourths white is the best choice).
-          {"\n\n"}
-          The text on the right side of the button is an approximate English-language description of busyness level. 
-          The text serves to accompany the pie chart icons in helping you make a decision on what button to press. 
-          For example, if you perceive the location as “very busy,” and you see that the pie chart icon’s fill 
-          accurately represents the busyness of the dining hall, then the “Very Busy” button is the best choice.
-          {"\n\n"}
-          Base your button selection on the pie chart icon if there is a difference in how you perceive the icon and the text. 
-          For example, if you think a half-full dining hall is “extremely busy,” 
-          then the button with a half-white pie chart icon is the best choice.
+          Underneath the activity level, there is a number (colored <Text style={globalStyles.maxCapacityNumber}>gold</Text>) 
+          that represents the maximum capacity of the dining hall.
           {"\n"}
         </Text>
 
-        <Text style={globalStyles.helpSection}>3. Submitting a Report</Text>
+        <Text style={globalStyles.helpSection}>4. Choosing a Dining Hall</Text>
 
         <Text style={globalStyles.helpText}>
           {"\n"}
-          Press the button that, in your best judgement (see Section 2), most accurately represents the current activity status.
-          Press the "Submit" button.
-          An alert should pop up indicating that your report has been submitted.
+          Based on the information provided, evaluate and decide which eatery you want to eat at.
+          {"\n\n"}
+          To create a report on the current busyness at a certain dining hall, tap the card
+          with the name of the dining hall you would like to report for.
           {"\n\n"}
         </Text>
       </ScrollView>

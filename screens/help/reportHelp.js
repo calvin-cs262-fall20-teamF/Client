@@ -1,20 +1,18 @@
 /***************************************************************
- * home.js
+ * reportHelp.js
  *
- * Last modified: October 19, 2020
+ * Last modified: December 10, 2020
  *
- * home.js contains and displays the list of campus locations.
+ * reportHelp.js displays on-line help for the Report page.
+ * The full end-user documentation can be found here:
+ * https://github.com/calvin-cs262-fall2020-Freespace/Project/blob/master/online-help.md
  ***************************************************************/
 
-// import functions and libraries
+// Import components and libraries
 import React from "react";
-import {
-  View,
-  Text,
-  ScrollView,
-} from "react-native";
+import { View, Text, ScrollView } from "react-native";
 
-// import custom functions and styles
+// Import custom styles
 import { globalStyles } from "../../styles/global";
 
 export default function ReportHelp({ navigation }) {
@@ -49,8 +47,8 @@ export default function ReportHelp({ navigation }) {
           (e.g. for Commons Dining Hall, the text should read, "Commons Dining Hall"). 
           {"\n\n"}
           If the text is not the name of the location you want to submit a report for, 
-          tap the back arrow labelled "Home" at the top left corner of the screen. 
-          From there, find the correct location (see Section 1).
+          tap the back arrow labeled "Home" in the top left corner of the screen. 
+          From there, find the correct location (see Home screen Help page).
           {"\n"}
         </Text>
 
@@ -58,7 +56,7 @@ export default function ReportHelp({ navigation }) {
 
         <Text style={globalStyles.helpText}>
           {"\n"}
-          The buttons on the Report page are listed in order of increasing busyness, from top to bottom. 
+          The Report page lists buttons in order of increasing busyness, from top to bottom. 
           The pie chart icon on the left side of the button provides a visual indicator of approximate busyness level. 
           The pie charts' white fill is associated with an approximate busyness level 
           (e.g. if a dining hall is a quarter full, the pie chart that is closest to one-fourths white is the best choice).
@@ -78,7 +76,7 @@ export default function ReportHelp({ navigation }) {
 
         <Text style={globalStyles.helpText}>
           {"\n"}
-          Press the button that, in your best judgement (see Section 2), most accurately represents the current activity status.
+          Press the button that, in your best judgment, most accurately represents the current activity status.
           Press the "Submit" button.
           An alert should pop up indicating that your report has been submitted.
           {"\n\n"}

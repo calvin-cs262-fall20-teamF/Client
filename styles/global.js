@@ -1,13 +1,13 @@
 /***************************************************************
  * global.js
  *
- * Last modified: October 19, 2020
+ * Last modified: December 10, 2020
  *
  * global.js creates the StyleSheet that contains details for
  * all style props.
  ***************************************************************/
 
-// import functions and libraries
+// import components and libraries
 import { StyleSheet, Dimensions } from "react-native";
 
 // get application window dimensions
@@ -291,6 +291,9 @@ export const globalStyles = StyleSheet.create({
     fontFamily: "nunito-regular",
     fontSize: 20,
     color: "#000",
+  },
+  maxCapacityNumber: {
+    color: "#999900",
   },
   /**************************
    * Navigation header styles

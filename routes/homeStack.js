@@ -8,12 +8,12 @@
  * navigation feature.
  ***************************************************************/
 
-// import functions and libraries
+// Import components and libraries
 import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
 import { Text, TouchableOpacity } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-// import custom functions and styles
+// Import custom components and styles
 import Home from "../screens/home";
 import Report from "../screens/report";
 import HomeHelp from "../screens/help/homeHelp";

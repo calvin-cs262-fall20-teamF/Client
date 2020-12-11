@@ -7,7 +7,7 @@
  * App.js contains all of the code necessary to run Freespace.
  ***************************************************************/
 
-// import functions and libraries
+// import components and libraries
 import React, { useState } from "react";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
@@ -16,12 +16,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-// import custom functions and styles
+// import custom components and styles
 import Navigator from "./routes/homeStack";
 import MapNav from "./routes/mapStack";
 import About from "./routes/aboutStack";
-
-import { globalStyles } from "./styles/global";
 
 /*******************************************************
  * getFonts

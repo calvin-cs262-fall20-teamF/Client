@@ -1,12 +1,14 @@
 /***************************************************************
- * home.js
+ * mapHelp.js
  *
- * Last modified: October 19, 2020
+ * Last modified: December 10, 2020
  *
- * home.js contains and displays the list of campus locations.
+ * mapHelp.js displays on-line help for the Map page.
+ * The full end-user documentation can be found here:
+ * https://github.com/calvin-cs262-fall2020-Freespace/Project/blob/master/online-help.md
  ***************************************************************/
 
-// import functions and libraries
+// Import components and libraries
 import React from "react";
 import {
   View,
@@ -14,10 +16,10 @@ import {
   ScrollView,
 } from "react-native";
 
-// import custom functions and styles
+// Import custom styles
 import { globalStyles } from "../../styles/global";
 
-export default function ReportHelp({ navigation }) {
+export default function MapHelp({ navigation }) {
   return (
     <View style={{flex: 1}}>
       <ScrollView style={globalStyles.helpScroll}>
@@ -28,9 +30,9 @@ export default function ReportHelp({ navigation }) {
           Imagine that you want to eat at Commons Dining Hall and need to know the dining hall’s location 
           relative to your current location. The detailed steps in this section show you how to
           {"\n\n"}
-          1. locate yourself on the map of Calvin University’s campus, {"\n"}
-          2. locate the dining halls on the map of Calvin University’s campus, {"\n"}
-          3. find out how busy (on a standardized scale) each dining hall is at the current moment. {"\n"}
+          1) locate yourself on the map of Calvin University’s campus, {"\n"}
+          2) locate the dining halls on the map of Calvin University’s campus, {"\n"}
+          3) find out how busy (on a standardized scale) each dining hall is at the current moment. {"\n"}
         </Text>
 
         <Text style={globalStyles.helpSection}>1. Locating Yourself</Text>

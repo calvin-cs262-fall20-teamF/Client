@@ -8,14 +8,13 @@
  * and the software developers
  ***************************************************************/
 
-// import functions and libraries
+// Import components and libraries
 import React from "react";
-import { StyleSheet, View, Text, ScrollView } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import ImageOverlay from "react-native-image-overlay";
-import Background from "../assets/background.jpg";
 
-// import custom functions and styles
-import { globalStyles } from "../styles/global";
+// Import custom components and styles
+import Background from "../assets/background.jpg";
 
 export default function About({ navigation }) {
   return (
