@@ -10,6 +10,7 @@
 // Import components and libraries
 import React, { useState, Component, useEffect } from "react";
 import MapView, { Marker } from "react-native-maps";
+import { ActivityIndicator } from "react-native";
 
 // import custom functions and styles
 import { globalStyles } from "../styles/global";
