@@ -1,3 +1,15 @@
+/***************************************************************
+ * statusButton.js
+ *
+ * Last modified: December 10, 2020
+ *
+ * statusButton.js contains the StatusButton component, which is
+ * used in the Report page. It passes a given ID back up to the
+ * parent when it is selected in order to retain one button
+ * being grayed-out at a time.
+ ***************************************************************/
+
+// Import components
 import React, { useState } from "react";
 import { View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";

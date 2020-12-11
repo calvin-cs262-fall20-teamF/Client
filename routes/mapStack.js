@@ -8,18 +8,20 @@
  * map navigation feature(scrolling, details, live reset)
  ***************************************************************/
 
-// import functions and libraries
+// Import components and libraries
 import React from "react";
+import { Text } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Text, Button } from "react-native";
 
-// import custom functions and styles
+// Import custom components and styles
 import Map from "../screens/map";
-import Header from "../shared/header";
+import MapHelp from "../screens/help/mapHelp"
+import HelpButton from "../shared/helpButton";
 import { globalStyles } from "../styles/global";
 
 const Stack = createStackNavigator();
-export default function MapStack() {
+export default function MapStack({ navigation }) {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -28,21 +30,25 @@ export default function MapStack() {
       }}
     >
       <Stack.Screen
-        name="Campus Map"
+        name="Map"
         component={Map}
         options={{
           headerTitle: () => 
-            <Text style={globalStyles.navHeader}> Campus Map </Text>,
+            <Text style={globalStyles.navHeader}> Map </Text>,
 
           headerRight: () => (
-            <Button
-              onPress={() =>
-                alert("This is a button that will update reports!")
-              }
-              title="REFRESH"
-              color="#d2b48c"
-            />
+            <TouchableOpacity onPress={() => {navigation.navigate("MapHelp")}}>
+              <HelpButton color="#fff" size={30}/>
+            </TouchableOpacity>
           ),
+        }}
+      />
+      <Stack.Screen
+        name="MapHelp"
+        component={MapHelp}
+        options={{
+          headerTitle: () => 
+            <Text style={globalStyles.navHeader}> Help: Map </Text>,
         }}
       />
     </Stack.Navigator>

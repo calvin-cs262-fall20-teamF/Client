@@ -7,20 +7,10 @@
  * (see home.js).
  ***************************************************************/
 
-// import functions and libraries
+// Import components and libraries
 import React, { useState, Component, useEffect } from "react";
 import MapView, { Marker } from "react-native-maps";
-import ModalImage from "react-modal-image";
-import {
-  StyleSheet,
-  View,
-  Text,
-  ActivityIndicator,
-  Image,
-  ImageBackground,
-  Button,
-  Modal,
-} from "react-native";
+import { ActivityIndicator } from "react-native";
 
 // import custom functions and styles
 import { globalStyles } from "../styles/global";
@@ -28,14 +18,6 @@ import { globalStyles } from "../styles/global";
 export default function Map({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-
-  var markers = [
-    {
-      latitude: 42.93, 
-      longitude: -85.5875,
-      title: "Commons Dining Hall",
-    }
-  ]
 
   useEffect(() => {
     fetch("https://calvinfreespace.herokuapp.com/locationstatus")

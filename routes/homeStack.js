@@ -8,19 +8,21 @@
  * navigation feature.
  ***************************************************************/
 
-// import functions and libraries
+// Import components and libraries
 import React from "react";
+import { Text, TouchableOpacity } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Text, Button } from "react-native";
 
-// import custom functions and styles
+// Import custom components and styles
 import Home from "../screens/home";
-import ReportPage from "../screens/reportPage";
-import Header from "../shared/header";
+import Report from "../screens/report";
+import HomeHelp from "../screens/help/homeHelp";
+import ReportHelp from "../screens/help/reportHelp";
+import HelpButton from "../shared/helpButton";
 import { globalStyles } from "../styles/global";
 
 const Stack = createStackNavigator();
-export default function HomeStack() {
+export default function HomeStack({ navigation }) {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -35,14 +37,42 @@ export default function HomeStack() {
         options={{
           headerTitle: () => 
             <Text style={globalStyles.navHeader}> Home </Text>,
+
+          headerRight: () => (
+            <TouchableOpacity onPress={() => {navigation.navigate("HomeHelp")}}>
+              <HelpButton color="#fff" size={30}/>
+            </TouchableOpacity>
+          ),
         }}
       />
       <Stack.Screen
-        name="ReportPage"
-        component={ReportPage}
+        name="Report"
+        component={Report}
         options={{
           headerTitle: () => 
             <Text style={globalStyles.navHeader}> Report </Text>,
+
+          headerRight: () => (
+            <TouchableOpacity onPress={() => {navigation.navigate("ReportHelp")}}>
+              <HelpButton color="#fff" size={30}/>
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="HomeHelp"
+        component={HomeHelp}
+        options={{
+          headerTitle: () => 
+            <Text style={globalStyles.navHeader}> Help: Home </Text>,
+        }}
+      />
+      <Stack.Screen
+        name="ReportHelp"
+        component={ReportHelp}
+        options={{
+          headerTitle: () => 
+            <Text style={globalStyles.navHeader}> Help: Reporting </Text>,
         }}
       />
     </Stack.Navigator>

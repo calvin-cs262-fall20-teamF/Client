@@ -6,7 +6,7 @@
  * home.js contains and displays the list of campus locations.
  ***************************************************************/
 
-// import functions and libraries
+// Import components and libraries
 import React, { useState, useEffect, useCallback } from "react";
 import {
   View,
@@ -15,11 +15,9 @@ import {
   FlatList,
   ImageBackground,
   ActivityIndicator,
-  RefreshControl
 } from "react-native";
-import { withSafeAreaInsets } from "react-native-safe-area-context";
 
-// import custom functions and styles
+// Import custom components and styles
 import LocationCard from "../shared/locationCard";
 import { globalStyles } from "../styles/global";
 
@@ -116,7 +114,7 @@ export default function Home({ navigation }) {
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
             <TouchableOpacity
-              onPress={() => navigation.navigate("ReportPage", item)}
+              onPress={() => navigation.navigate("Report", item)}
             >
               <LocationCard>
                 <ImageBackground
