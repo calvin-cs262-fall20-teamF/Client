@@ -14,9 +14,21 @@ import { View, Alert } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { globalStyles } from "../styles/global";
 
+/**
+  * SubmitButton
+  * 
+  * @param {Array} - Array of props passed to component
+  * @return JSX to create SubmitButton component
+  */
 export default function SubmitButton(props) {
   const [isSelected, setSelected] = useState(props.selected);
 
+  /**
+   * pressHandler
+   * 
+   * Calls an anonymous function to generate an alert based
+   * on if a status button has been selected or not.
+   */
   const pressHandler = () => {
     if (props.invalid) {
       Alert.alert("Please select an option first.");

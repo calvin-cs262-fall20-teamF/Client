@@ -12,6 +12,12 @@ import React from "react";
 import { View } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
+/**
+  * HelpButton
+  * 
+  * @param {Array} - Array of props passed to component
+  * @return JSX to create HelpButton component
+  */
 export default function HelpButton(props) {
   return (
     <View style={{ flexDirection: 'row', marginHorizontal: 10} }>

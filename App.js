@@ -2,7 +2,7 @@
  * App.js
  *
  * Organization: Freespace
- * Last modified: September 29, 2020
+ * Last modified: December 10, 2020
  *
  * App.js contains all of the code necessary to run Freespace.
  ***************************************************************/
@@ -12,7 +12,6 @@ import React, { useState } from "react";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import { NavigationContainer } from "@react-navigation/native";
-
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -21,36 +20,41 @@ import Navigator from "./routes/homeStack";
 import MapNav from "./routes/mapStack";
 import About from "./routes/aboutStack";
 
-/*******************************************************
- * getFonts
- *
- * Loads fonts asynchronously into a specified name
- * for later use
- *******************************************************/
+/**
+  * getFonts
+  * 
+  * Loads fonts asynchronously into a specified name for
+  * later use.
+  */
 const getFonts = () =>
   Font.loadAsync({
     "nunito-regular": require("./assets/fonts/Nunito-Regular.ttf"),
     "nunito-bold": require("./assets/fonts/Nunito-Bold.ttf"),
   });
 
-//tab navigation
+/**
+  * Tab navigation
+  */
 const Tab = createBottomTabNavigator();
 
+/**
+  * App
+  * 
+  * Creates main navigation components for app.
+  */
 export default function App() {
+  // State for font loading
   const [fontsLoaded, setFontsLoaded] = useState(false);
-
-  // If fonts have been loaded, display the navigation container
-  // (created in routes/homeStack.js)
 
   if (fontsLoaded) {
     return (
       <NavigationContainer>
         {/* bottom navigation bar */}
         <Tab.Navigator
-          //default route is Home Screen
+          // default route is Home stack
           initialRouteName="HomeStack"
           tabBarOptions={{
-            activeTintColor: "#800000",
+            activeTintColor: "#800000", // maroon
           }}
         >
           <Tab.Screen

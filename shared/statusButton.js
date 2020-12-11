@@ -15,9 +15,21 @@ import { View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { globalStyles } from "../styles/global";
 
+/**
+  * StatusButton
+  * 
+  * @param {Array} - Array of props passed to component
+  * @return JSX to create StatusButton component
+  */
 export default function StatusButton(props) {
   const [isSelected, setSelected] = useState(props.selected);
 
+  /**
+   * pressHandler
+   * 
+   * Changes value of isSelected to opposite value and calls
+   * reportCallback to set the active button ID. 
+   */
   const pressHandler = () => {
     setSelected(!isSelected);
     props.reportCallback(props.buttonID);

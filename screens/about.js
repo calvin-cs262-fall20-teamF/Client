@@ -1,11 +1,10 @@
 /***************************************************************
  * about.js
  *
- * Last modified: September 29, 2020
+ * Last modified: December 10, 2020
  *
- * about.js creates the stack that will be used for the app's description
- * user report feature(scale, submit, etc),
- * and the software developers
+ * about.js displays the Freespace vision as well as the names
+ * of the Freespace team members.
  ***************************************************************/
 
 // Import components and libraries
@@ -16,6 +15,11 @@ import ImageOverlay from "react-native-image-overlay";
 // Import custom components and styles
 import Background from "../assets/background.jpg";
 
+/**
+ * About
+ * @param {navigation} - navigation object
+ * @return JSX for displaying About page
+ */
 export default function About({ navigation }) {
   return (
     <View>
@@ -40,8 +44,12 @@ export default function About({ navigation }) {
         <View style={styles.devCard}>
           <Text style={styles.developers}>Developers: {"\n"}</Text>
           <Text style={styles.people}>
-            Esther Cha {"\n"}Zachary Chin{"\n"}Seongil (Leo) Kim{"\n"}YoungIn
-            Kim {"\n"}Sinai Park{"\n"}Benjamin Westerhof
+            Esther Cha {"\n"}
+            Zachary Chin {"\n"}
+            Seongil (Leo) Kim {"\n"}
+            YoungIn Kim {"\n"}
+            Sinai Park {"\n"}
+            Benjamin Westerhof
           </Text>
         </View>
       </View>
@@ -50,7 +58,7 @@ export default function About({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  // Info card element
+  /** Vision statement card  */
   contentCard: {
     borderRadius: 10,
     backgroundColor: "rgba(0,0,0,0.5)",
@@ -67,6 +75,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     bottom: "-60%",
   },
+  /** Developer names card */
   devCard: {
     borderRadius: 10,
     backgroundColor: "rgba(0,0,0,0.4)",
@@ -79,11 +88,13 @@ const styles = StyleSheet.create({
     bottom: "-129%",
     alignItems: "center",
   },
+  /** Image at the top of the page */
   imageContent: {
     width: 200,
     height: 300,
     padding: 80,
   },
+  /** Text for "Freespace" */
   appTitle: {
     fontFamily: "nunito-bold",
     textShadowOffset: { width: 4, height: 4 },
@@ -97,17 +108,20 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     bottom: "86%",
   },
+  /** Vision statement Text */
   vision: {
     fontFamily: "nunito-bold",
     fontSize: 16,
     color: "#fff",
     textAlign: "justify",
   },
+  /** Developer header text */
   developers: {
     fontFamily: "nunito-regular",
     fontSize: 15,
     color: "#fff",
   },
+  /** Developer names text */
   people: {
     fontFamily: "nunito-regular",
     fontSize: 12,

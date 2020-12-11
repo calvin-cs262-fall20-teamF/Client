@@ -19,7 +19,11 @@ import {
 // Import custom styles
 import { globalStyles } from "../../styles/global";
 
-export default function MapHelp({ navigation }) {
+/**
+ * MapHelp
+ * @return JSX to display Mape page help documentation
+ */
+export default function MapHelp() {
   return (
     <View style={{flex: 1}}>
       <ScrollView style={globalStyles.helpScroll}>

@@ -13,6 +13,12 @@ import React from "react";
 import { View } from "react-native";
 import { globalStyles } from "../styles/global";
 
+/**
+  * LocationCard
+  * 
+  * @param {Array} - Array of props passed to component
+  * @return JSX to create LocationCard component
+  */
 export default function LocationCard(props) {
   return (
     <View style={globalStyles.locationCard}>

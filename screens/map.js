@@ -1,10 +1,11 @@
 /***************************************************************
  * map.js
  *
- * Last modified: September 29, 2020
+ * Last modified: December 10, 2020
  *
- * map.js displays campus map with clickable buildings
- * (see home.js).
+ * map.js displays the campus map with pins representing each
+ * location. The pins change color based on the current activity
+ * levels the specific location.
  ***************************************************************/
 
 // Import components and libraries
@@ -15,31 +16,44 @@ import { ActivityIndicator } from "react-native";
 // import custom functions and styles
 import { globalStyles } from "../styles/global";
 
+/**
+ * Map
+ * @param {navigation} - navigation object
+ * @return JSX to display Apple or Google Map, along
+ *          with the pins at each dining hall.
+ */
 export default function Map({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
+  // Fetch data from database to update colors
   useEffect(() => {
     fetch("https://calvinfreespace.herokuapp.com/locationstatus")
       .then((response) => response.json())
       .then((json) => setData(json))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
-  }, []);
+  }, [data]);
 
+  /**
+   * getActivityStyle
+   * @param {number} - average of report values
+   * @return {string} - string that specifies color
+   *                      based on activity status
+   */
   function getActivityStyle(value) {
     if (value > 0 && value < 1.0)
-      return "green";
+      return globalStyles.notBusy.color;
     else if (value >= 1.0 && value < 2.0)
-      return "tan";
+      return globalStyles.slightlyBusy.color;
     else if (value >= 2.0 && value < 3.0)
-      return "yellow";
+      return globalStyles.busy.color;
     else if (value >= 3.0 && value < 4.0)
-      return "orange";
+      return globalStyles.veryBusy.color;
     else if (value >= 4.0)
-      return "red";
+      return globalStyles.extremelyBusy.color;
     else
-      return "indigo";
+      return globalStyles.noReports.color;
   }
 
   return (

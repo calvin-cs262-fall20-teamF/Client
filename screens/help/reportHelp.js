@@ -15,7 +15,11 @@ import { View, Text, ScrollView } from "react-native";
 // Import custom styles
 import { globalStyles } from "../../styles/global";
 
-export default function ReportHelp({ navigation }) {
+/**
+ * ReportHelp
+ * @return JSX to display Report page help documentation
+ */
+export default function ReportHelp() {
   return (
     <View style={{flex: 1}}>
       <ScrollView style={globalStyles.helpScroll}>

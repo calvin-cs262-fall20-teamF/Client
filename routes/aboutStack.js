@@ -1,11 +1,10 @@
 /***************************************************************
- * reportStack.js
+ * aboutStack.js
  *
- * Last modified: September 29, 2020
+ * Last modified: Decemer 10, 2020
  *
- * reportStack.js creates the stack that will be used for user report
- * this will drive the application's
- * user report feature(scale, submit, etc)
+ * aboutStack.js creates the stack that will be used to contain
+ * the About page.
  ***************************************************************/
 
 // Import components and libraries
@@ -18,12 +17,20 @@ import About from "../screens/about";
 import { globalStyles } from "../styles/global";
 
 const Stack = createStackNavigator();
-export default function aboutStack() {
+
+/**
+ * AboutStack
+ * @param {navigation} - navigation object
+ * @return JSX for stack navigation between About page
+ *          and any other pages that may be created in
+ *          the future.
+ */
+export default function AboutStack() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: "#8C2131", height: 60 },
-        headerTintColor: "#fff",
+        headerStyle: { backgroundColor: "#8C2131", height: 60 }, // maroon
+        headerTintColor: "#fff", // white
       }}
     >
       <Stack.Screen

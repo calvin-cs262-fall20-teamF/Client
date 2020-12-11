@@ -19,7 +19,11 @@ import {
 // Import custom styles
 import { globalStyles } from "../../styles/global";
 
-export default function HomeHelp({ navigation }) {
+/**
+ * HomeHelp
+ * @return JSX to display Home help documentation
+ */
+export default function HomeHelp() {
   return (
     <View style={{flex: 1}}>
       <ScrollView style={globalStyles.helpScroll}>

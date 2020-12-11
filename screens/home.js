@@ -1,7 +1,7 @@
 /***************************************************************
  * home.js
  *
- * Last modified: October 19, 2020
+ * Last modified: December 10, 2020
  *
  * home.js contains and displays the list of campus locations.
  ***************************************************************/
@@ -21,6 +21,11 @@ import {
 import LocationCard from "../shared/locationCard";
 import { globalStyles } from "../styles/global";
 
+/**
+ * Home
+ * @param {navigation} - navigation object
+ * @return JSX to display Home screen list of locations
+ */
 export default function Home({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -54,15 +59,23 @@ export default function Home({ navigation }) {
     },
   ]);
 
-  function getLocationName(locationid) {
-    return locations[locationid-1].name;
-  }
-
+  /**
+   * getLocationImage
+   * @param {number} - navigation object
+   * @return {string} - string that specifies color
+   *                      based on activity status
+   */
   function getLocationImage(locationid) {
     return locations[locationid-1].image;
   }
 
   // If conditional function to change the color of business based on the current state
+  /**
+   * getActivityStyle
+   * @param {number} - average of report values
+   * @return style object that specifies color
+   *           based on activity status
+   */
   function getActivityStyle(value) {
     if (value > 0 && value < 1.0)
       return globalStyles.notBusy;
@@ -78,6 +91,12 @@ export default function Home({ navigation }) {
       return globalStyles.noReports;
   }
 
+  /**
+   * getActivityStyle
+   * @param {number} - average of report values
+   * @return {string} - string that specifies text
+   *                      based on activity status
+   */
   function getActivityLevel(value) {
     if (value > 0 && value < 1.0)
       return "Not busy";
@@ -93,6 +112,7 @@ export default function Home({ navigation }) {
       return "N/A";
   }
 
+  // Fetch data fromd atabase
   useEffect(() => {
     fetch("https://calvinfreespace.herokuapp.com/locationstatus")
       .then((response) => response.json())
@@ -101,8 +121,6 @@ export default function Home({ navigation }) {
       .finally(() => setLoading(false));
   }, [data]);
 
-  // Displays the FlatList containing all locations; each location can be tapped/clicked to
-  // navigate to the LocationDetails screen.
   return (
     <View style={globalStyles.homeContainer}>
       {isLoading ? (
@@ -117,6 +135,7 @@ export default function Home({ navigation }) {
               onPress={() => navigation.navigate("Report", item)}
             >
               <LocationCard>
+                {/* Location image and name */}
                 <ImageBackground
                   source={getLocationImage(item.locationid)}
                   imageStyle={globalStyles.locationImage}
