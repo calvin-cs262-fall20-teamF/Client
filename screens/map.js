@@ -43,17 +43,17 @@ export default function Map({ navigation }) {
    */
   function getActivityStyle(value) {
     if (value > 0 && value < 1.0)
-      return globalStyles.notBusy.color;
+      return "green";
     else if (value >= 1.0 && value < 2.0)
-      return globalStyles.slightlyBusy.color;
+      return "#008000";
     else if (value >= 2.0 && value < 3.0)
-      return globalStyles.busy.color;
+      return "gold";
     else if (value >= 3.0 && value < 4.0)
-      return globalStyles.veryBusy.color;
+      return "orange";
     else if (value >= 4.0)
-      return globalStyles.extremelyBusy.color;
+      return "red";
     else
-      return globalStyles.noReports.color;
+      return "indigo";
   }
 
   return (
@@ -64,9 +64,9 @@ export default function Map({ navigation }) {
       region={{latitude: 42.932, longitude: -85.5875, latitudeDelta: 0.0045, longitudeDelta: 0.0045}}
       showsUserLocation={true}
     >
-      <Marker coordinate={{ latitude: 42.9314, longitude: -85.5868 }} title="Commons Dining Hall" pinColor={getActivityStyle(data[0].statusaverage)}/>
-      <Marker coordinate={{ latitude: 42.9332, longitude: -85.5863 }} title="Knollcrest Dining Hall" pinColor={getActivityStyle(data[1].statusaverage)}/>
-      <Marker coordinate={{ latitude: 42.9310, longitude: -85.5875 }} title="Uppercrust" pinColor={getActivityStyle(data[2].statusaverage)}/>
+      <Marker coordinate={{ latitude: 42.9314, longitude: -85.5868 }} title="Commons Dining Hall" pinColor={getActivityStyle(data[0].statusaverage)} setOpacity={getActivityStyle(data[0].statusaverage) === "#008000" ? 0.1 : 1}/>
+      <Marker coordinate={{ latitude: 42.9332, longitude: -85.5863 }} title="Knollcrest Dining Hall" pinColor={getActivityStyle(data[1].statusaverage)} setOpacity={getActivityStyle(data[0].statusaverage) === "#008000" ? 0.1 : 1}/>
+      <Marker coordinate={{ latitude: 42.9310, longitude: -85.5875 }} title="Uppercrust" pinColor={getActivityStyle(data[2].statusaverage)} setOpacity={getActivityStyle(data[0].statusaverage) === "#008000" ? 0.1 : 1}/>
 
     </MapView>)
   );
