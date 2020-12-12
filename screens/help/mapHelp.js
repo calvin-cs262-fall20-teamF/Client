@@ -1,7 +1,7 @@
 /***************************************************************
  * mapHelp.js
  *
- * Last modified: December 10, 2020
+ * Last modified: December 11, 2020
  *
  * mapHelp.js displays on-line help for the Map page.
  * The full end-user documentation can be found here:
@@ -55,6 +55,9 @@ export default function MapHelp() {
           To locate a dining hall on the map, look for a colored pin on the Map page. 
           The color of the pin will be one of five colors: green, green-yellow, yellow, orange, or red. 
           The smaller end of the pin indicates the approximate location of a dining hall on the map.
+          {"\n\n"}
+          Tap a pin to see a pop-up appear above the pin. The pop-up contains the name of the location the pin
+          points to. Tap anywhere within the map to make the pop-up disappear.
           {"\n"}
         </Text>
 
